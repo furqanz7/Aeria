@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 
 interface Particle {
   x: number;
@@ -15,103 +14,94 @@ interface Particle {
 export default function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
+  const frameRef = useRef<number>(0);
 
   useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reducedMotion) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
 
-    // Initialize particles
     const initParticles = () => {
       particlesRef.current = [];
-      const particleCount = Math.min(50, Math.floor(window.innerWidth / 20));
-      
+      const particleCount = Math.min(36, Math.floor(window.innerWidth / 28));
+
       for (let i = 0; i < particleCount; i++) {
         particlesRef.current.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 3 + 1,
-          speedX: (Math.random() - 0.5) * 0.5,
-          speedY: (Math.random() - 0.5) * 0.5,
-          opacity: Math.random() * 0.5 + 0.1,
+          size: Math.random() * 2 + 0.5,
+          speedX: (Math.random() - 0.5) * 0.35,
+          speedY: (Math.random() - 0.5) * 0.35,
+          opacity: Math.random() * 0.35 + 0.08,
         });
       }
     };
 
+    resizeCanvas();
     initParticles();
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
 
-    // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particlesRef.current.forEach((particle, index) => {
-        // Update position
         particle.x += particle.speedX;
         particle.y += particle.speedY;
 
-        // Wrap around edges
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.x > canvas.width) particle.x = 0;
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity})`;
+        ctx.fillStyle = `rgba(125, 211, 252, ${particle.opacity})`;
         ctx.fill();
 
-        // Draw connections
-        particlesRef.current.forEach((otherParticle, otherIndex) => {
-          if (index !== otherIndex) {
-            const distance = Math.sqrt(
-              Math.pow(particle.x - otherParticle.x, 2) + 
-              Math.pow(particle.y - otherParticle.y, 2)
-            );
-            
-            if (distance < 100) {
-              ctx.beginPath();
-              ctx.moveTo(particle.x, particle.y);
-              ctx.lineTo(otherParticle.x, otherParticle.y);
-              ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / 100)})`;
-              ctx.lineWidth = 0.5;
-              ctx.stroke();
-            }
+        for (let otherIndex = index + 1; otherIndex < particlesRef.current.length; otherIndex++) {
+          const other = particlesRef.current[otherIndex];
+          const distance = Math.hypot(particle.x - other.x, particle.y - other.y);
+
+          if (distance < 90) {
+            ctx.beginPath();
+            ctx.moveTo(particle.x, particle.y);
+            ctx.lineTo(other.x, other.y);
+            ctx.strokeStyle = `rgba(125, 211, 252, ${0.08 * (1 - distance / 90)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
           }
-        });
+        }
       });
 
-      requestAnimationFrame(animate);
+      frameRef.current = requestAnimationFrame(animate);
     };
 
     animate();
 
     return () => {
+      cancelAnimationFrame(frameRef.current);
       window.removeEventListener('resize', resizeCanvas);
     };
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0">
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full"
-        style={{ background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)' }}
-      />
-      
-      {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5" />
-      <div className="absolute inset-0 bg-gradient-to-tl from-green-500/5 via-cyan-500/5 to-blue-500/5" />
+    <div className="pointer-events-none fixed inset-0 z-0" aria-hidden>
+      <canvas ref={canvasRef} className="h-full w-full opacity-70" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.08),transparent_55%)]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black" />
     </div>
   );
 }
