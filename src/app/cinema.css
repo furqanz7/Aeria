@@ -216,6 +216,34 @@ p {
   color: #f1dfad;
   text-shadow: 0 2px 40px #42635b20;
 }
+.aeria-wordmark {
+  display: inline-block;
+  width: 2.85em;
+  height: auto;
+  vertical-align: baseline;
+  overflow: visible;
+  flex-shrink: 0;
+}
+.film-intro h1 > .aeria-wordmark {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+}
+.brand > .aeria-wordmark {
+  width: 102px;
+}
+.footer-main > .brand > .aeria-wordmark {
+  width: 114px;
+}
+.ecosystem-core > strong > .aeria-wordmark {
+  display: block;
+  width: 126px;
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .brand > .aeria-wordmark { width: 86px; }
+  .ecosystem-core > strong > .aeria-wordmark { width: 102px; }
+}
 .film-signature {
   font-family: var(--font-display), serif;
   font-size: 27px;

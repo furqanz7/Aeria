@@ -8,6 +8,7 @@ import CinematicJourney, { Feather } from "@/components/CinematicJourney";
 import OriginalLogo from "@/components/OriginalLogo";
 import AirIdentity from "@/components/AirIdentity";
 import MotionDirector from "@/components/MotionDirector";
+import AeriaWordmark from "@/components/AeriaWordmark";
 import { Arrow, SaudiRiyal, Symbol } from "@/components/Icons";
 import { TESTFLIGHT_URL } from "@/lib/site";
 
@@ -312,7 +313,7 @@ export default function Home() {
               <i />
             </div>
             <div className="ecosystem-core">
-              <strong>Aeria</strong>
+              <strong><AeriaWordmark /></strong>
               <span>Identity & orchestration</span>
             </div>
             <div className="network-threads right">
@@ -490,7 +491,7 @@ export default function Home() {
           <div className="footer-main">
             <a className="brand" href="#hero">
               <OriginalLogo className="wordmark-logo" size={32} />
-              <span>Aeria</span>
+              <AeriaWordmark />
             </a>
             <span>A new dimension of connection.</span>
             <nav aria-label="Footer">

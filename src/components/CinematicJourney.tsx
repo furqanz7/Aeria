@@ -8,6 +8,7 @@ import {
   useTransform,
 } from "framer-motion";
 import Image from "next/image";
+import AeriaWordmark from "./AeriaWordmark";
 import { Arrow } from "./Icons";
 import WingDissolve from "./WingDissolve";
 import { setMotionPaused, useMotionSettings } from "@/lib/motion";
@@ -143,7 +144,7 @@ export default function CinematicJourney() {
           style={reduced ? undefined : { opacity: titleOpacity, y: titleY }}
         >
           <p className="film-kicker">A NEW DIMENSION OF PAYMENTS</p>
-          <h1 aria-label="Aeria">AERIA</h1>
+            <h1 aria-label="Aeria"><AeriaWordmark /></h1>
           <p className="film-signature">Fly with Aeria.</p>
         </motion.div>
         <motion.div

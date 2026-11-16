@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { NAV_LINKS, TESTFLIGHT_URL } from "@/lib/site";
 import { Arrow } from "./Icons";
 import OriginalLogo from "./OriginalLogo";
+import AeriaWordmark from "./AeriaWordmark";
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -55,7 +56,7 @@ export default function Nav() {
           onClick={() => setOpen(false)}
         >
           <OriginalLogo className="wordmark-logo" size={35} />
-          <span>Aeria</span>
+          <AeriaWordmark />
         </a>
         <nav className="desktop-nav" aria-label="Main">
           {NAV_LINKS.map((l) => (
