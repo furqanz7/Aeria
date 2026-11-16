@@ -1,0 +1,38 @@
+{
+  "responsive": [
+    {
+      "overflow": false,
+      "width": 320
+    },
+    {
+      "overflow": false,
+      "width": 390
+    },
+    {
+      "overflow": false,
+      "width": 600
+    },
+    {
+      "overflow": false,
+      "width": 768
+    },
+    {
+      "overflow": false,
+      "width": 1024
+    },
+    {
+      "overflow": false,
+      "width": 1440
+    }
+  ],
+  "evidence": {
+    "butterflyMotion": "butterfly-flight",
+    "cloudMotion": "cloud-breathe",
+    "floralImageCount": 0,
+    "mainButterfly": "/_next/image?url=%2Fvisuals%2Faeria-cobalt-butterfly.webp&w=3840&q=75",
+    "originalLogoCount": 4,
+    "petalCount": 0
+  },
+  "console": [],
+  "conceptFlowVerified": true
+}

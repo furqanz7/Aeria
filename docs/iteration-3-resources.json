@@ -1,0 +1,114 @@
+[
+  {
+    "path": "/",
+    "status": 200
+  },
+  {
+    "path": "/logo.png",
+    "status": 200
+  },
+  {
+    "path": "/brand/saudi-riyal.svg",
+    "status": 200
+  },
+  {
+    "path": "/visuals/aeria-cinematic-sky.webp",
+    "status": 200
+  },
+  {
+    "path": "/visuals/aeria-cobalt-butterfly.webp",
+    "status": 200
+  },
+  {
+    "path": "/visuals/aeria-social-cinematic.jpg",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/media/8760c4774489e4ba-s.p.woff2",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/css/cc8c814ae95fadec.css",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/webpack-6e93d87d4b641668.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/255-4f84124391a7dac4.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/main-app-1e7b52997e4b4aa6.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/239-f67af46218fa45ff.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/app/layout-2a5b62dc9c6eb109.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/295-7b4b57fdeb8ff0df.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/app/page-af8494a8870ffadd.js",
+    "status": 200
+  },
+  {
+    "path": "/manifest.json",
+    "status": 200
+  },
+  {
+    "path": "/favicon.ico",
+    "status": 200
+  },
+  {
+    "path": "/apple-touch-icon.png",
+    "status": 200
+  },
+  {
+    "path": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Flogo.png&w=96&q=75",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Fvisuals%2Faeria-cinematic-sky.webp&w=3840&q=90",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Fvisuals%2Faeria-cloud-veil.webp&w=3840&q=75",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Fvisuals%2Faeria-cobalt-butterfly.webp&w=3840&q=75",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Flogo.png&w=48&q=75",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Fp2p.webp&w=3840&q=75",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Fterminal.jpeg&w=3840&q=75",
+    "status": 200
+  },
+  {
+    "path": "/_next/image?url=%2Flogo.png&w=64&q=75",
+    "status": 200
+  }
+]

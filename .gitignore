@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local iteration backups and supplied reference contact sheets
+/work/
+/docs/reference-review/

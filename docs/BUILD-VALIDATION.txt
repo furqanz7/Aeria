@@ -1,0 +1,12 @@
+Final local production build, 15 November 2026 (Asia/Riyadh)
+Command: npm run build
+Next.js: 15.5.18
+Compiled successfully; lint and TypeScript checks passed.
+Static page generation: 7/7, success.
+Homepage route: static, 39.3 kB route output, approximately 147 kB first-load JavaScript.
+Other existing routes: /_not-found, /apple-icon.png, /icon.png, /sitemap.xml.
+git diff --check: passed.
+Local resource check: 28 resources, all HTTP 200.
+Original brand/product assets: all nine checked files unchanged.
+Fresh final production browser: zero console errors or warnings.
+See REBUILD-REPORT.md for test boundaries and device/performance limits.

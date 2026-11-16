@@ -1,11 +1,11 @@
 {
-  "name": "Aeria — Proximity Payments",
+  "name": "Aeria — Fly with Aeria",
   "short_name": "Aeria",
-  "description": "Universal cross-platform proximity payment system",
+  "description": "A universal payment identity and a proximity-first payment vision.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "theme_color": "#edf5fd",
   "icons": [
     {
       "src": "/icon-192.png",

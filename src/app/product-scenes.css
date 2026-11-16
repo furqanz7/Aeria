@@ -1,0 +1,740 @@
+/* Apple Pay / Tap to Cash informed composition, with original Aeria UI and devices. */
+.product-scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 500/540;
+  isolation: isolate;
+  overflow: hidden;
+  --scene-scale: 1;
+}
+.product-scene-stage {
+  position: absolute;
+  width: 500px;
+  height: 540px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(var(--scene-scale));
+  transform-origin: center;
+}
+.product-scene-people {
+  aspect-ratio: 500/390;
+}
+.product-scene-people .product-scene-stage {
+  height: 390px;
+}
+.native-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(ellipse at 50% 50%, #f8f7e7aa, transparent 65%);
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 70% 70%, #000 20%, transparent 75%);
+}
+.wallet-device {
+  width: 220px;
+  height: 464px;
+  position: absolute;
+  z-index: 3;
+  padding: 5px;
+  border: 1px solid #c5c8c6;
+  border-radius: 40px;
+  background: linear-gradient(
+    90deg,
+    #d0d2ce 0%,
+    #666c6e 1.5%,
+    #171e22 3%,
+    #080d12 97%,
+    #737b7e 98.5%,
+    #bfc5c4
+  );
+  box-shadow:
+    inset 0 1px 1px #f1f2e5,
+    inset 0 -1px 1px #454d53,
+    0 10px 25px #03172326;
+}
+.wallet-device:after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 37px;
+  border: 1px solid #ffffff22;
+  pointer-events: none;
+}
+.wallet-side-key {
+  position: absolute;
+  right: -2px;
+  top: 101px;
+  width: 2px;
+  height: 39px;
+  border-radius: 2px;
+  background: linear-gradient(#a6aeac, #36434a, #8f9897);
+}
+.wallet-screen {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 33px;
+  background: #f2f2f7;
+  color: #16191e;
+  font-family:
+    -apple-system, BlinkMacSystemFont, var(--font-manrope), sans-serif;
+  padding: 0 11px;
+  box-shadow: inset 0 0 0 1px #000;
+}
+.wallet-status {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 7px;
+  font-weight: 650;
+  padding: 0 9px;
+  position: relative;
+  z-index: 5;
+}
+.wallet-island {
+  position: absolute;
+  width: 61px;
+  height: 17px;
+  top: 10px;
+  left: 50%;
+  translate: -50% 0;
+  border-radius: 15px;
+  background: #05090d;
+  box-shadow: inset 0 0 0 1px #ffffff09;
+}
+.wallet-status-icons {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.wallet-status-icons > i {
+  height: 6px;
+  width: 8px;
+  clip-path: polygon(
+    0 100%,
+    0 65%,
+    20% 65%,
+    20% 45%,
+    40% 45%,
+    40% 25%,
+    60% 25%,
+    60% 0,
+    100% 0,
+    100% 100%
+  );
+  background: currentColor;
+}
+.wallet-status-icons > b {
+  width: 12px;
+  height: 6px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  position: relative;
+}
+.wallet-status-icons > b:after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.wallet-screen-nearby {
+  background: radial-gradient(ellipse at 50% 5%, #183e4b, #071b25 60%, #05121d);
+  color: #e3eceb;
+  padding: 0 10px;
+}
+.wallet-nearby-brand {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-display), serif;
+  font-size: 22px;
+  line-height: 1;
+  color: #e9e2c7;
+  z-index: 2;
+}
+.wallet-nearby-person {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 89px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 3;
+  text-align: center;
+}
+.wallet-nearby-person > span {
+  font-size: 6px;
+  line-height: 1.5;
+  letter-spacing: 0.17em;
+  color: #9cbabf;
+}
+.wallet-nearby-person > strong {
+  font-size: 49px;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.15;
+  margin-top: 4px;
+  color: #ebefec;
+}
+.wallet-nearby-person > small {
+  font-size: 8px;
+  color: #b5ccca;
+  margin-top: 7px;
+  line-height: 1.5;
+}
+.wallet-nearby-particles {
+  position: absolute;
+  top: 28px;
+  left: 14px;
+  right: 14px;
+  height: 160px;
+  z-index: 1;
+  mask-image: linear-gradient(#000, transparent);
+  pointer-events: none;
+}
+.wallet-nearby-particles > i {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: #c1e2e5;
+  border-radius: 50%;
+}
+.wallet-nearby-particles > i:nth-child(3n) {
+  width: 1.7px;
+  height: 1.7px;
+  background: #e9e3c5;
+}
+.wallet-nearby-instruction {
+  position: absolute;
+  top: 207px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  color: #b5cecf;
+  font-size: 8px;
+}
+.wallet-nearby-instruction > .icon {
+  width: 20px;
+  height: 20px;
+}
+.wallet-home-bar {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  width: 65px;
+  height: 3px;
+  background: #17191f;
+  border-radius: 4px;
+  translate: -50% 0;
+}
+.wallet-screen-nearby .wallet-home-bar {
+  background: #e2ebe6;
+}
+.people-handset-one {
+  left: -101px;
+  top: -42px;
+  transform: rotate(90deg);
+}
+.people-handset-two {
+  left: 393px;
+  top: -42px;
+  transform: rotate(-90deg);
+}
+.native-discovery-rings {
+  position: absolute;
+  left: 242px;
+  top: 87px;
+  width: 16px;
+  height: 206px;
+  z-index: 4;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, #89c7d036, transparent 65%);
+}
+.native-discovery-rings > i {
+  position: absolute;
+  left: 7px;
+  width: 1px;
+  height: 2px;
+  background: #a7d4d7;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.native-discovery-rings > i:nth-child(1) {
+  top: 25%;
+  height: 3px;
+}
+.native-discovery-rings > i:nth-child(2) {
+  top: 48%;
+  left: 4px;
+}
+.native-discovery-rings > i:nth-child(3) {
+  top: 70%;
+  left: 9px;
+}
+.wallet-sheet-nav {
+  height: 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.wallet-sheet-nav > span {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffffc0;
+  box-shadow: 0 1px 3px #0000000b;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1;
+}
+.wallet-sheet-nav > span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 5px;
+}
+.wallet-sheet-nav > strong {
+  font-family: var(--font-display), serif;
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+.wallet-identity-card {
+  height: 117px;
+  border-radius: 12px;
+  background: linear-gradient(130deg, #284e69, #183f5c 55%, #3c7180);
+  color: #f0e7c9;
+  position: relative;
+  overflow: hidden;
+  padding: 14px;
+  box-shadow: 0 4px 9px #0c29412e;
+  border: 1px solid #678c9c50;
+}
+.wallet-identity-card:after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 120px;
+  right: -75px;
+  top: -20px;
+  border: 1px solid #c5d9d548;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 13px #c4d9da14,
+    0 0 0 26px #c4d9da0b;
+  rotate: 25deg;
+}
+.wallet-card-wordmark {
+  font-family: var(--font-display), serif;
+  font-size: 31px;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+}
+.wallet-card-caption {
+  display: block;
+  font-size: 4.5px;
+  letter-spacing: 0.15em;
+  color: #a6c7cc;
+  margin-top: 7px;
+  position: relative;
+  z-index: 1;
+}
+.wallet-identity-card > div {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  z-index: 1;
+}
+.wallet-identity-card > div > span {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: #e0e9e5;
+}
+.wallet-identity-card > div > small {
+  font-size: 4.5px;
+  letter-spacing: 0.1em;
+  color: #aecbcb;
+}
+.wallet-merchant-state {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.wallet-merchant-state > .icon {
+  width: 18px;
+  height: 18px;
+  color: #43697b;
+  margin-bottom: 8px;
+}
+.wallet-merchant-state > strong {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.25;
+}
+.wallet-merchant-state > span {
+  font-size: 9px;
+  color: #71767d;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.wallet-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fff;
+  border-radius: 9px;
+  padding: 11px 10px;
+  margin-top: 18px;
+  font-size: 7px;
+  line-height: 1.4;
+  color: #73777f;
+}
+.wallet-detail-row > strong {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  color: #303e4a;
+}
+.wallet-detail-row .icon {
+  width: 9px;
+  height: 9px;
+  color: #9ba6ad;
+}
+.wallet-hold-prompt {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+}
+.wallet-hold-prompt > .icon {
+  width: 22px;
+  height: 22px;
+  color: #315c78;
+}
+.wallet-hold-prompt > strong {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+}
+.wallet-hold-prompt > span {
+  font-size: 6px;
+  color: #7b8289;
+  line-height: 1.5;
+}
+.product-scene-merchant .native-atmosphere {
+  background: radial-gradient(ellipse at 70% 28%, #72909f1c, transparent 60%);
+  opacity: 1;
+}
+.native-scene-ground {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  top: 84%;
+  height: 16px;
+  z-index: -1;
+  background: radial-gradient(ellipse, #214b5615, transparent 65%);
+  filter: blur(7px);
+}
+.product-scene-people .native-scene-ground {
+  top: 80%;
+}
+.scene-awake .native-discovery-rings > i {
+  animation: wallet-nearby-light 1.6s ease-in-out 2;
+}
+@keyframes wallet-nearby-light {
+  0%,
+  100% {
+    opacity: 0.15;
+    translate: 0 -4px;
+  }
+  50% {
+    opacity: 0.85;
+    translate: 0 4px;
+  }
+}
+.daily-art:has(.product-scene),
+.terminal-art:has(.product-scene) {
+  width: 100%;
+}
+.daily-art:has(.product-scene) {
+  overflow: hidden;
+}
+.daily-art:has(.product-scene) figcaption,
+.terminal-art:has(.product-scene) figcaption {
+  margin-top: 20px;
+  font-size: 8px;
+}
+@media (max-width: 600px) {
+  .product-scene {
+    --scene-scale: 0.69;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-awake .native-discovery-rings > i {
+    animation: none;
+  }
+}
+.product-scene-merchant {
+  aspect-ratio: 500/600;
+}
+.product-scene-merchant .product-scene-stage {
+  height: 600px;
+}
+
+.merchant-hardware {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.merchant-hardware > canvas {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.merchant-hardware[data-ready="true"] > canvas {
+  opacity: 1;
+}
+.terminal-art .merchant-hardware-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.product-scene-merchant:has(.merchant-hardware[data-ready="true"]) .merchant-hardware-poster {
+  opacity: 0;
+}
+
+/* A quiet product walkthrough beneath the shared physical scene. */
+.merchant-experience {
+  margin-top: -55px;
+  position: relative;
+  z-index: 2;
+  padding: 0 8px;
+  color: #d9e3df;
+}
+.merchant-experience-steps {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0 0 18px;
+  margin: 0 0 25px;
+  border-bottom: 1px solid #9ab0b42e;
+}
+.merchant-experience-steps li { font-size: 11px; color: #92a8b1; display: flex; gap: 7px; align-items: baseline; }
+.merchant-experience-steps li span { font-size: 8px; color: #79929d; }
+.merchant-experience-steps li[aria-current="step"] { color: #eee5c9; }
+.merchant-experience-steps li[aria-current="step"] span { color: #bad4d7; }
+.merchant-experience-message { min-height: 113px; }
+.merchant-experience-message h3 { font-family: var(--font-display),serif; font-size: 29px; line-height: 1.15; font-weight: 400; margin: 0 0 12px; color: #e7dfc5; }
+.merchant-experience-message p { font-size: 11px; line-height: 1.8; max-width: 370px; color: #a7bcc4; margin: 0; }
+.merchant-experience .merchant-experience-disclaimer { font-size: 8px; line-height: 1.7; color: #879fa9; margin: 17px 0 0; }
+@media(max-width:600px) {
+  .merchant-experience { margin-top: -30px; padding: 0; }
+  .merchant-experience-message { min-height: 122px; }
+  .merchant-experience-message h3 { font-size: 26px; }
+  .merchant-experience-steps li { font-size: 10px; gap: 5px; }
+}
+
+/* A single, automatic nearby-discovery moment; the accepted composition stays. */
+.product-scene-people .wallet-device {
+  transition: translate 1.4s cubic-bezier(.22,1,.36,1);
+}
+.people-discovery-idle .people-handset-one { translate: -14px 0; }
+.people-discovery-idle .people-handset-two { translate: 14px 0; }
+.people-discovery-searching .wallet-device,
+.people-discovery-found .wallet-device,
+.people-discovery-connected .wallet-device { translate: 0 0; }
+.wallet-discovery-search {
+  position: absolute;
+  top: 89px;
+  left: 0;
+  right: 0;
+  height: 109px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  translate: 0 5px;
+  transition: opacity .45s, translate .6s;
+  color: #b5cecf;
+  overflow: hidden;
+}
+.wallet-discovery-search > span { font-size: 6px; letter-spacing: .17em; color: #9cbabf; line-height: 1.5; }
+.wallet-discovery-search > .icon { width: 39px; height: 39px; margin-top: 14px; color: #c6e2e5; stroke-width: 1.1; }
+.wallet-discovery-search > small { font-size: 8px; margin-top: 12px; line-height: 1.5; }
+.wallet-discovery-scan {
+  position: absolute;
+  top: 23px;
+  left: 24%;
+  right: 24%;
+  height: 1px;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, #caedf08a, transparent);
+  box-shadow: 0 0 9px #a6d6e126;
+}
+.product-scene-people .wallet-nearby-person {
+  transition: opacity .45s, translate .6s;
+}
+.people-discovery-idle .wallet-nearby-person,
+.people-discovery-searching .wallet-nearby-person { opacity: 0; translate: 0 -5px; }
+.people-discovery-idle .wallet-discovery-search,
+.people-discovery-searching .wallet-discovery-search { opacity: 1; translate: 0 0; }
+.people-discovery-searching .wallet-discovery-scan { animation: nearby-screen-scan 1.35s ease-in-out 1; }
+.people-discovery-connected .wallet-nearby-instruction { color: #c0d9d2; }
+.product-scene-people .native-discovery-rings { left: 249px; background: radial-gradient(ellipse, #9cd3df25, transparent 65%); transition: opacity .65s; }
+.product-scene-people .native-discovery-rings > i { animation: none; }
+.people-discovery-searching .native-discovery-rings > i { animation: nearby-bridge-pulse 1.2s ease-in-out 2; }
+.people-discovery-searching .native-discovery-rings > i:nth-child(2) { animation-delay: .14s; }
+.people-discovery-searching .native-discovery-rings > i:nth-child(3) { animation-delay: .28s; }
+.people-discovery-connected .native-discovery-rings { opacity: .22; }
+.product-scene-people[data-discovery-active="false"] .wallet-discovery-scan,
+.product-scene-people[data-discovery-active="false"] .native-discovery-rings > i { animation-play-state: paused; }
+@keyframes nearby-screen-scan {
+  0% { translate: 0 0; opacity: 0; }
+  20% { opacity: .6; }
+  80% { opacity: .6; }
+  100% { translate: 0 60px; opacity: 0; }
+}
+@keyframes nearby-bridge-pulse {
+  0%,100% { opacity: .12; scale: .8; }
+  50% { opacity: .8; scale: 1.3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-scene-people .wallet-device,
+  .product-scene-people .wallet-nearby-person,
+  .product-scene-people .wallet-discovery-search { transition: none; }
+  .product-scene-people .wallet-discovery-scan,
+  .product-scene-people .native-discovery-rings > i { animation: none; }
+}
+
+/* The interface stays settled; only its atmosphere continues to breathe. */
+.product-scene-people .wallet-nearby-atmosphere {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+.product-scene-people .wallet-nearby-atmosphere > i {
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(ellipse at 35% 30%, #397ba85e, #315e7e1f 38%, transparent 67%);
+  animation: nearby-light-drift 8s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.product-scene-people .wallet-nearby-atmosphere > i + i {
+  background: radial-gradient(ellipse at 65% 58%, #69999b32, #3b6e7920 32%, transparent 65%);
+  animation-name: nearby-mist-drift;
+  animation-duration: 11s;
+  animation-delay: -4s;
+}
+.product-scene-people .people-handset-two .wallet-nearby-atmosphere > i {
+  animation-delay: -5s;
+}
+.product-scene-people .people-handset-two .wallet-nearby-atmosphere > i + i {
+  animation-delay: -8s;
+}
+.product-scene-people .wallet-nearby-particles {
+  animation: nearby-particle-drift 9s ease-in-out infinite alternate;
+  animation-play-state: paused;
+}
+.product-scene-people .wallet-nearby-particles > i:nth-child(7n) {
+  animation: nearby-particle-glint 6s ease-in-out infinite;
+  animation-delay: -2s;
+  animation-play-state: paused;
+}
+.product-scene-people .wallet-nearby-particles > i:nth-child(11n) {
+  animation: nearby-particle-glint 8s ease-in-out infinite;
+  animation-delay: -5s;
+  animation-play-state: paused;
+}
+.product-scene-people .people-handset-two .wallet-nearby-particles {
+  animation-delay: -3s;
+}
+.product-scene-people .wallet-discovery-search,
+.product-scene-people .wallet-nearby-instruction { z-index: 2; }
+.product-scene-people[data-discovery-active="true"] .wallet-nearby-atmosphere > i,
+.product-scene-people[data-discovery-active="true"] .wallet-nearby-particles,
+.product-scene-people[data-discovery-active="true"] .wallet-nearby-particles > i {
+  animation-play-state: running;
+}
+html:has(.film-paused) .product-scene-people .wallet-nearby-atmosphere > i,
+html:has(.film-paused) .product-scene-people .wallet-nearby-particles,
+html:has(.film-paused) .product-scene-people .wallet-nearby-particles > i {
+  animation-play-state: paused !important;
+}
+@keyframes nearby-light-drift {
+  from { transform: translate3d(-16px, 12px, 0) rotate(-8deg) scale(.95); }
+  to { transform: translate3d(22px, -16px, 0) rotate(9deg) scale(1.08); }
+}
+@keyframes nearby-mist-drift {
+  from { transform: translate3d(18px, 18px, 0) scale(1.05); }
+  to { transform: translate3d(-20px, -12px, 0) scale(.94); }
+}
+@keyframes nearby-particle-drift {
+  from { transform: translate3d(-3px, 5px, 0); }
+  to { transform: translate3d(4px, -12px, 0); }
+}
+@keyframes nearby-particle-glint {
+  0%,100% { opacity: .12; }
+  50% { opacity: .65; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-scene-people .wallet-nearby-atmosphere > i,
+  .product-scene-people .wallet-nearby-particles,
+  .product-scene-people .wallet-nearby-particles > i { animation: none !important; }
+}
+
+/* Keep the restored field intact; give its dust a short, shared direction. */
+.product-scene-people.people-discovery-connected .wallet-nearby-particles {
+  animation: none;
+}
+.product-scene-people.people-discovery-connected .wallet-nearby-particles > i {
+  animation: nearby-dust-current var(--nearby-duration) linear infinite;
+  animation-delay: var(--nearby-delay);
+  animation-play-state: paused;
+}
+.product-scene-people.people-discovery-connected .people-handset-two .wallet-nearby-particles > i {
+  animation-direction: reverse;
+}
+.product-scene-people.people-discovery-connected[data-discovery-active="true"] .wallet-nearby-particles > i {
+  animation-play-state: running;
+}
+@keyframes nearby-dust-current {
+  0% { transform: translate3d(0, 24px, 0); opacity: 0; }
+  15%,85% { opacity: var(--nearby-opacity); }
+  100% { transform: translate3d(0, -24px, 0); opacity: 0; }
+}

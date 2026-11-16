@@ -1,0 +1,165 @@
+{
+  "localHTTP": 200,
+  "resources": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200
+    },
+    {
+      "path": "/manifest.json",
+      "status": 200
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 200
+    },
+    {
+      "path": "/apple-touch-icon.png",
+      "status": 200
+    },
+    {
+      "path": "/icon.png",
+      "status": 200
+    },
+    {
+      "path": "/apple-icon.png",
+      "status": 200
+    },
+    {
+      "path": "/visuals/aeria-social.jpg",
+      "status": 200
+    },
+    {
+      "path": "/visuals/aeria-sky-butterfly.webp",
+      "status": 200
+    },
+    {
+      "path": "/fonts/manrope-latin-variable.woff2",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/media/8760c4774489e4ba-s.p.woff2",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/css/d3391782fa71ba53.css",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/webpack-6e93d87d4b641668.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/255-4f84124391a7dac4.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/main-app-1e7b52997e4b4aa6.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/356-eaff0fad68a83f7c.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/app/layout-0fa95989d381457b.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/16-196d963f0a01a899.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/app/page-b892cebbe2bfb062.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Flogo.png&w=96&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fvisuals%2Faeria-sky-butterfly.webp&w=3840&q=90",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fp2p.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fterminal.jpeg&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fvisuals%2Faeria-sky-butterfly.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Flogo.png&w=64&q=75",
+      "status": 200
+    }
+  ],
+  "originalAssets": [
+    {
+      "file": "public/logo.png",
+      "unchanged": true
+    },
+    {
+      "file": "public/p2p.PNG",
+      "unchanged": true
+    },
+    {
+      "file": "public/p2p.webp",
+      "unchanged": true
+    },
+    {
+      "file": "public/terminal.jpeg",
+      "unchanged": true
+    },
+    {
+      "file": "public/favicon.ico",
+      "unchanged": true
+    },
+    {
+      "file": "public/apple-touch-icon.png",
+      "unchanged": true
+    },
+    {
+      "file": "public/icon-192.png",
+      "unchanged": true
+    },
+    {
+      "file": "public/icon-512.png",
+      "unchanged": true
+    },
+    {
+      "file": "public/og-image.png",
+      "unchanged": true
+    }
+  ],
+  "securityHeaders": {
+    "contentTypeOptions": "nosniff",
+    "frameOptions": "SAMEORIGIN",
+    "referrerPolicy": "strict-origin-when-cross-origin"
+  },
+  "metadata": {
+    "canonical": true,
+    "newSocialImage": true,
+    "lightTheme": true
+  }
+}

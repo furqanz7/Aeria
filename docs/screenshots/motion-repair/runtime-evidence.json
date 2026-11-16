@@ -1,0 +1,1812 @@
+[
+  {
+    "name": "hero-start",
+    "closing": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "gates": {
+      "motionPaused": "false",
+      "motionReady": "true",
+      "pageHidden": "false",
+      "reducedMotion": "false"
+    },
+    "hero": {
+      "deep": {
+        "name": "none",
+        "opacity": "0",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1, 0, 0, 1, 0, 45)",
+        "translate": "none"
+      },
+      "depth": {
+        "name": "none",
+        "opacity": "0",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "translate": "none"
+      },
+      "dust": {
+        "hash": 1966272429,
+        "height": 1000,
+        "nonzero": 0,
+        "width": 1425
+      },
+      "height": 1000,
+      "light": {
+        "hash": 4206110543,
+        "height": 1000,
+        "nonzero": 121,
+        "width": 1425
+      },
+      "sky": {
+        "name": "none",
+        "opacity": "1",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "translate": "none"
+      },
+      "top": 0,
+      "wing": {
+        "name": "wing-breathe-left",
+        "opacity": "1",
+        "state": "running",
+        "time": [
+          150
+        ],
+        "transform": "matrix3d(0.99843, 0.017311, -0.0532697, 0, -0.0172864, 0.99985, 0.000922289, 0, 0.0532777, 0, 0.99858, 0, 0, 0, 0, 1)",
+        "translate": "none"
+      }
+    },
+    "identity": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "merchant": {
+      "phase": "ready"
+    },
+    "native": {
+      "active": "false",
+      "view": "0"
+    },
+    "proximity": {
+      "active": "false",
+      "phase": "idle"
+    },
+    "scroll": 0,
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "name": "hero-mid",
+    "closing": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "gates": {
+      "motionPaused": "false",
+      "motionReady": "true",
+      "pageHidden": "false",
+      "reducedMotion": "false"
+    },
+    "hero": {
+      "deep": {
+        "name": "none",
+        "opacity": "0",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1, 0, 0, 1, 0, 45)",
+        "translate": "none"
+      },
+      "depth": {
+        "name": "none",
+        "opacity": "0.625",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.14, 0, 0, 1.14, 0, 0)",
+        "translate": "none"
+      },
+      "dust": {
+        "hash": 424338507,
+        "height": 1000,
+        "nonzero": 4185,
+        "width": 1440
+      },
+      "height": 1000,
+      "light": {
+        "hash": 1789207774,
+        "height": 1000,
+        "nonzero": 141,
+        "width": 1440
+      },
+      "sky": {
+        "name": "none",
+        "opacity": "0.421053",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.14, 0, 0, 1.14, 0, 0)",
+        "translate": "none"
+      },
+      "top": 0,
+      "wing": {
+        "name": "wing-breathe-left",
+        "opacity": "1",
+        "state": "running",
+        "time": [
+          44467
+        ],
+        "transform": "matrix3d(0.923639, -0.0334824, -0.381798, 0, 0.030943, 0.999439, -0.0127907, 0, 0.382012, 0, 0.924157, 0, 0, 0, 0, 1)",
+        "translate": "none"
+      }
+    },
+    "identity": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "merchant": {
+      "phase": "ready"
+    },
+    "native": {
+      "active": "false",
+      "view": "0"
+    },
+    "proximity": {
+      "active": "false",
+      "phase": "idle"
+    },
+    "scroll": 750,
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "name": "hero-paused",
+    "one": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "gates": {
+        "motionPaused": "true",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "0.190278",
+          "state": "paused",
+          "time": [],
+          "transform": "matrix(1, 0, 0, 1, 0, 33.2586)",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "0.939167",
+          "state": "paused",
+          "time": [],
+          "transform": "matrix(1.16513, 0, 0, 1.16513, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 346195180,
+          "height": 1000,
+          "nonzero": 4381,
+          "width": 1425
+        },
+        "height": 1000,
+        "light": {
+          "hash": 3518833867,
+          "height": 1000,
+          "nonzero": 127,
+          "width": 1425
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0.0903509",
+          "state": "paused",
+          "time": [],
+          "transform": "matrix(1.16513, 0, 0, 1.16513, 0, 0)",
+          "translate": "none"
+        },
+        "top": 0,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "paused",
+          "time": [
+            44802
+          ],
+          "transform": "matrix3d(0.930898, -0.0305987, -0.363997, 0, 0.0284976, 0.999532, -0.011143, 0, 0.364167, 0, 0.931334, 0, 0, 0, 0, 1)",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "merchant": {
+        "phase": "ready"
+      },
+      "native": {
+        "active": "false",
+        "view": "0"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "idle"
+      },
+      "scroll": 938.5,
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    "two": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "gates": {
+        "motionPaused": "true",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "0.190278",
+          "state": "paused",
+          "time": [],
+          "transform": "matrix(1, 0, 0, 1, 0, 33.2586)",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "0.939167",
+          "state": "paused",
+          "time": [],
+          "transform": "matrix(1.16513, 0, 0, 1.16513, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 346195180,
+          "height": 1000,
+          "nonzero": 4381,
+          "width": 1425
+        },
+        "height": 1000,
+        "light": {
+          "hash": 3518833867,
+          "height": 1000,
+          "nonzero": 127,
+          "width": 1425
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0.0903509",
+          "state": "paused",
+          "time": [],
+          "transform": "matrix(1.16513, 0, 0, 1.16513, 0, 0)",
+          "translate": "none"
+        },
+        "top": 0,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "paused",
+          "time": [
+            44802
+          ],
+          "transform": "matrix3d(0.930898, -0.0305987, -0.363997, 0, 0.0284976, 0.999532, -0.011143, 0, 0.364167, 0, 0.931334, 0, 0, 0, 0, 1)",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "merchant": {
+        "phase": "ready"
+      },
+      "native": {
+        "active": "false",
+        "view": "0"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "idle"
+      },
+      "scroll": 938.5,
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    }
+  },
+  {
+    "name": "hero-resumed",
+    "closing": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "gates": {
+      "motionPaused": "false",
+      "motionReady": "true",
+      "pageHidden": "false",
+      "reducedMotion": "false"
+    },
+    "hero": {
+      "deep": {
+        "name": "none",
+        "opacity": "0.936111",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1, 0, 0, 1, 0, 5.48276)",
+        "translate": "none"
+      },
+      "depth": {
+        "name": "none",
+        "opacity": "1",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.20093, 0, 0, 1.20093, 0, 0)",
+        "translate": "none"
+      },
+      "dust": {
+        "hash": 740678779,
+        "height": 1000,
+        "nonzero": 3079,
+        "width": 1425
+      },
+      "height": 1000,
+      "light": {
+        "hash": 694242686,
+        "height": 1000,
+        "nonzero": 138,
+        "width": 1425
+      },
+      "sky": {
+        "name": "none",
+        "opacity": "0",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.20093, 0, 0, 1.20093, 0, 0)",
+        "translate": "none"
+      },
+      "top": 0,
+      "wing": {
+        "name": "wing-breathe-left",
+        "opacity": "1",
+        "state": "running",
+        "time": [
+          45219
+        ],
+        "transform": "matrix3d(0.944488, -0.0247722, -0.327611, 0, 0.0234042, 0.999693, -0.00811814, 0, 0.327711, 0, 0.944778, 0, 0, 0, 0, 1)",
+        "translate": "none"
+      }
+    },
+    "identity": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "merchant": {
+      "phase": "ready"
+    },
+    "native": {
+      "active": "false",
+      "view": "0"
+    },
+    "proximity": {
+      "active": "false",
+      "phase": "idle"
+    },
+    "scroll": 1207,
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "name": "hero-deep",
+    "closing": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "gates": {
+      "motionPaused": "false",
+      "motionReady": "true",
+      "pageHidden": "false",
+      "reducedMotion": "false"
+    },
+    "hero": {
+      "deep": {
+        "name": "none",
+        "opacity": "1",
+        "state": "running",
+        "time": [],
+        "transform": "none",
+        "translate": "none"
+      },
+      "depth": {
+        "name": "none",
+        "opacity": "1",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+        "translate": "none"
+      },
+      "dust": {
+        "hash": 1966272429,
+        "height": 1000,
+        "nonzero": 0,
+        "width": 1425
+      },
+      "height": 1000,
+      "light": {
+        "hash": 626943694,
+        "height": 1000,
+        "nonzero": 129,
+        "width": 1425
+      },
+      "sky": {
+        "name": "none",
+        "opacity": "0",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+        "translate": "none"
+      },
+      "top": -207,
+      "wing": {
+        "name": "wing-breathe-left",
+        "opacity": "1",
+        "state": "running",
+        "time": [
+          45353
+        ],
+        "transform": "matrix3d(0.94957, -0.0224166, -0.312752, 0, 0.0212915, 0.999749, -0.00701259, 0, 0.31283, 0, 0.949809, 0, 0, 0, 0, 1)",
+        "translate": "none"
+      }
+    },
+    "identity": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "merchant": {
+      "phase": "ready"
+    },
+    "native": {
+      "active": "false",
+      "view": "0"
+    },
+    "proximity": {
+      "active": "false",
+      "phase": "idle"
+    },
+    "scroll": 1707,
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "name": "hero-deep-pinned",
+    "closing": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "gates": {
+      "motionPaused": "false",
+      "motionReady": "true",
+      "pageHidden": "false",
+      "reducedMotion": "false"
+    },
+    "hero": {
+      "deep": {
+        "name": "none",
+        "opacity": "1",
+        "state": "running",
+        "time": [],
+        "transform": "none",
+        "translate": "none"
+      },
+      "depth": {
+        "name": "none",
+        "opacity": "1",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.22, 0, 0, 1.22, 0, 0)",
+        "translate": "none"
+      },
+      "dust": {
+        "hash": 1966272429,
+        "height": 1000,
+        "nonzero": 0,
+        "width": 1425
+      },
+      "height": 1000,
+      "light": {
+        "hash": 1390990770,
+        "height": 1000,
+        "nonzero": 112,
+        "width": 1425
+      },
+      "sky": {
+        "name": "none",
+        "opacity": "0",
+        "state": "running",
+        "time": [],
+        "transform": "matrix(1.22, 0, 0, 1.22, 0, 0)",
+        "translate": "none"
+      },
+      "top": 0,
+      "wing": {
+        "name": "wing-breathe-left",
+        "opacity": "1",
+        "state": "running",
+        "time": [
+          93552
+        ],
+        "transform": "matrix3d(0.957445, -0.0185234, -0.288022, 0, 0.0177382, 0.999828, -0.00533606, 0, 0.288071, 0, 0.957609, 0, 0, 0, 0, 1)",
+        "translate": "none"
+      }
+    },
+    "identity": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "paused",
+      "time": [
+        0
+      ],
+      "transform": "none",
+      "translate": "-4px 5px"
+    },
+    "merchant": {
+      "phase": "ready"
+    },
+    "native": {
+      "active": "false",
+      "view": "0"
+    },
+    "proximity": {
+      "active": "false",
+      "phase": "idle"
+    },
+    "scroll": 1350,
+    "viewport": {
+      "height": 1000,
+      "width": 1440
+    }
+  },
+  {
+    "name": "identity-reveal",
+    "entering": {
+      "entries": [
+        {
+          "filter": "blur(4.07817px)",
+          "opacity": "0.347492",
+          "transform": "matrix(1, 0, 0, 1, 0, 29.3628)"
+        },
+        {
+          "filter": "blur(4.07817px)",
+          "opacity": "0.347492",
+          "transform": "matrix(1, 0, 0, 1, 0, 29.3628)"
+        }
+      ],
+      "feather": "running"
+    },
+    "one": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "running",
+      "time": [
+        33
+      ],
+      "transform": "none",
+      "translate": "-3.99985px 4.9998px"
+    },
+    "two": {
+      "name": "chapter-feather-drift",
+      "opacity": "0.8",
+      "state": "running",
+      "time": [
+        1249
+      ],
+      "transform": "none",
+      "translate": "-3.78599px 4.70039px"
+    }
+  },
+  {
+    "name": "proximity-playback",
+    "states": [
+      {
+        "active": "true",
+        "particles": "running",
+        "phase": "searching",
+        "wash": "running"
+      },
+      {
+        "active": "true",
+        "particles": "running",
+        "phase": "found",
+        "wash": "running"
+      },
+      {
+        "active": "true",
+        "particles": "running",
+        "phase": "connected",
+        "wash": "running"
+      }
+    ]
+  },
+  {
+    "name": "native-playback",
+    "states": [
+      {
+        "active": "true",
+        "view": "0",
+        "wash": "running"
+      },
+      {
+        "active": "true",
+        "view": "1",
+        "wash": "running"
+      },
+      {
+        "active": "true",
+        "view": "2",
+        "wash": "running"
+      }
+    ]
+  },
+  {
+    "name": "merchant-playback",
+    "states": [
+      {
+        "phase": "ready",
+        "top": 180.078125
+      },
+      {
+        "phase": "tapping",
+        "hardware": {
+          "phase": "tapping",
+          "ready": "true",
+          "motion": "running"
+        },
+        "top": 180.078125
+      },
+      {
+        "phase": "review",
+        "hardware": {
+          "phase": "review",
+          "ready": "true",
+          "motion": "running"
+        },
+        "top": 180.078125
+      },
+      {
+        "phase": "authorizing",
+        "hardware": {
+          "phase": "authorizing",
+          "ready": "true",
+          "motion": "running"
+        },
+        "top": 180.078125
+      },
+      {
+        "phase": "processing",
+        "hardware": {
+          "phase": "processing",
+          "ready": "true",
+          "motion": "running"
+        },
+        "top": 180.078125
+      },
+      {
+        "phase": "complete",
+        "hardware": {
+          "phase": "complete",
+          "ready": "true",
+          "motion": "running"
+        },
+        "top": 180.078125
+      }
+    ]
+  },
+  {
+    "name": "closing-playback",
+    "before": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "running",
+        "time": [
+          33
+        ],
+        "transform": "none",
+        "translate": "-3.99985px 4.99979px"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 1966272429,
+          "height": 1000,
+          "nonzero": 0,
+          "width": 1425
+        },
+        "height": 1000,
+        "light": {
+          "hash": 1966272429,
+          "height": 1000,
+          "nonzero": 0,
+          "width": 1425
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "top": -9310,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "paused",
+          "time": [
+            94853
+          ],
+          "transform": "matrix3d(0.993695, 0.0085025, -0.111793, 0, -0.0084492, 0.999964, 0.000950553, 0, 0.111797, 0, 0.993731, 0, 0, 0, 0, 1)",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          69233
+        ],
+        "transform": "none",
+        "translate": "-2.90621px 3.46869px"
+      },
+      "merchant": {
+        "motion": "paused",
+        "phase": "complete"
+      },
+      "native": {
+        "active": "false",
+        "view": "1"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "connected"
+      },
+      "scroll": 10810,
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    "after": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "running",
+        "time": [
+          183
+        ],
+        "transform": "none",
+        "translate": "-3.99556px 4.99379px"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 1966272429,
+          "height": 1000,
+          "nonzero": 0,
+          "width": 1425
+        },
+        "height": 1000,
+        "light": {
+          "hash": 1966272429,
+          "height": 1000,
+          "nonzero": 0,
+          "width": 1425
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "top": -9310,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "paused",
+          "time": [
+            94853
+          ],
+          "transform": "matrix3d(0.993695, 0.0085025, -0.111793, 0, -0.0084492, 0.999964, 0.000950553, 0, 0.111797, 0, 0.993731, 0, 0, 0, 0, 1)",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          69233
+        ],
+        "transform": "none",
+        "translate": "-2.90621px 3.46869px"
+      },
+      "merchant": {
+        "motion": "paused",
+        "phase": "complete"
+      },
+      "native": {
+        "active": "false",
+        "view": "1"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "connected"
+      },
+      "scroll": 10810,
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    }
+  },
+  {
+    "name": "native-paused",
+    "states": [
+      {
+        "active": "false",
+        "paused": "true",
+        "view": "1"
+      }
+    ]
+  },
+  {
+    "name": "native-resumed",
+    "before": {
+      "active": "true",
+      "view": "1"
+    },
+    "after": {
+      "active": "true",
+      "view": "2"
+    }
+  },
+  {
+    "name": "live-preference-recovery",
+    "reduced": {
+      "closing": {
+        "name": "none",
+        "opacity": "0.8",
+        "state": "running",
+        "time": [],
+        "transform": "none",
+        "translate": "none"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "true"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 1966272429,
+          "height": 1000,
+          "nonzero": 0,
+          "width": 1425
+        },
+        "height": 1000,
+        "light": {
+          "hash": 838727426,
+          "height": 1000,
+          "nonzero": 124,
+          "width": 1425
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "top": -4756,
+        "wing": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "none",
+        "opacity": "0.8",
+        "state": "running",
+        "time": [],
+        "transform": "none",
+        "translate": "none"
+      },
+      "merchant": {
+        "motion": "paused",
+        "phase": "complete"
+      },
+      "native": {
+        "active": "false",
+        "view": "2"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "connected"
+      },
+      "scroll": 4756,
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    },
+    "restored": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 1966272429,
+          "height": 1000,
+          "nonzero": 0,
+          "width": 1425
+        },
+        "height": 1000,
+        "light": {
+          "hash": 838727426,
+          "height": 1000,
+          "nonzero": 124,
+          "width": 1425
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "top": -4756,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "paused",
+          "time": [
+            0
+          ],
+          "transform": "matrix3d(0.998477, 0.0174524, -0.052328, 0, -0.0174285, 0.999848, 0.000913388, 0, 0.052336, 0, 0.99863, 0, 0, 0, 0, 1)",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "merchant": {
+        "motion": "paused",
+        "phase": "complete"
+      },
+      "native": {
+        "active": "true",
+        "view": "2"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "connected"
+      },
+      "scroll": 6256,
+      "viewport": {
+        "height": 1000,
+        "width": 1440
+      }
+    }
+  },
+  {
+    "name": "mobile-short-hero",
+    "proof": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 3916417677,
+          "height": 150,
+          "nonzero": 0,
+          "width": 300
+        },
+        "height": 568,
+        "light": {
+          "hash": 3916417677,
+          "height": 150,
+          "nonzero": 0,
+          "width": 300
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.24, 0, 0, 1.24, 0, 0)",
+          "translate": "none"
+        },
+        "top": -5112.90625,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "paused",
+          "time": [
+            0
+          ],
+          "transform": "matrix3d(0.998477, 0.0174524, -0.052328, 0, -0.0174285, 0.999848, 0.000913388, 0, 0.052336, 0, 0.99863, 0, 0, 0, 0, 1)",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "merchant": {
+        "phase": "ready"
+      },
+      "native": {
+        "active": "true",
+        "view": "0"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "idle"
+      },
+      "scroll": 5794.5,
+      "viewport": {
+        "height": 568,
+        "width": 320
+      }
+    }
+  },
+  {
+    "name": "mobile-hero-scroll",
+    "start": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1, 0, 0, 1, 0, 45)",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 3228969925,
+          "height": 568,
+          "nonzero": 0,
+          "width": 320
+        },
+        "height": 568,
+        "light": {
+          "hash": 3711908089,
+          "height": 568,
+          "nonzero": 128,
+          "width": 320
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+          "translate": "none"
+        },
+        "top": 0,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "running",
+          "time": [
+            0
+          ],
+          "transform": "none",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "merchant": {
+        "phase": "ready"
+      },
+      "native": {
+        "active": "false",
+        "view": "0"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "idle"
+      },
+      "scroll": 0,
+      "viewport": {
+        "height": 568,
+        "width": 320
+      }
+    },
+    "mid": {
+      "closing": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "false"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1, 0, 0, 1, 0, 45)",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "0.749633",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.14997, 0, 0, 1.14997, 0, 0)",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 4136467462,
+          "height": 568,
+          "nonzero": 3438,
+          "width": 320
+        },
+        "height": 568,
+        "light": {
+          "hash": 2180926742,
+          "height": 568,
+          "nonzero": 123,
+          "width": 320
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "0.28986",
+          "state": "running",
+          "time": [],
+          "transform": "matrix(1.14997, 0, 0, 1.14997, 0, 0)",
+          "translate": "none"
+        },
+        "top": 0,
+        "wing": {
+          "name": "wing-breathe-left",
+          "opacity": "1",
+          "state": "running",
+          "time": [
+            200
+          ],
+          "transform": "matrix3d(0.998392, 0.0171996, -0.0540114, 0, -0.0171745, 0.999852, 0.00092911, 0, 0.0540194, 0, 0.99854, 0, 0, 0, 0, 1)",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "chapter-feather-drift",
+        "opacity": "0.8",
+        "state": "paused",
+        "time": [
+          0
+        ],
+        "transform": "none",
+        "translate": "-4px 5px"
+      },
+      "merchant": {
+        "phase": "ready"
+      },
+      "native": {
+        "active": "false",
+        "view": "0"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "idle"
+      },
+      "scroll": 375,
+      "viewport": {
+        "height": 568,
+        "width": 320
+      }
+    }
+  },
+  {
+    "name": "mobile-native",
+    "states": [
+      {
+        "active": "true",
+        "view": "0",
+        "width": 390
+      },
+      {
+        "active": "true",
+        "view": "1",
+        "width": 390
+      }
+    ]
+  },
+  {
+    "name": "reduced-reload",
+    "proof": {
+      "closing": {
+        "name": "none",
+        "opacity": "0.8",
+        "state": "running",
+        "time": [],
+        "transform": "none",
+        "translate": "none"
+      },
+      "gates": {
+        "motionPaused": "false",
+        "motionReady": "true",
+        "pageHidden": "false",
+        "reducedMotion": "true"
+      },
+      "hero": {
+        "deep": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "depth": {
+          "name": "none",
+          "opacity": "0",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "dust": {
+          "hash": 3916417677,
+          "height": 150,
+          "nonzero": 0,
+          "width": 300
+        },
+        "height": 844,
+        "light": {
+          "hash": 3916417677,
+          "height": 150,
+          "nonzero": 0,
+          "width": 300
+        },
+        "sky": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        },
+        "top": -10310.5,
+        "wing": {
+          "name": "none",
+          "opacity": "1",
+          "state": "running",
+          "time": [],
+          "transform": "none",
+          "translate": "none"
+        }
+      },
+      "identity": {
+        "name": "none",
+        "opacity": "0.8",
+        "state": "running",
+        "time": [],
+        "transform": "none",
+        "translate": "none"
+      },
+      "merchant": {
+        "phase": "complete"
+      },
+      "native": {
+        "active": "false",
+        "view": "0"
+      },
+      "proximity": {
+        "active": "false",
+        "phase": "connected"
+      },
+      "scroll": 10310.5,
+      "viewport": {
+        "height": 844,
+        "width": 390
+      }
+    }
+  },
+  {
+    "name": "mobile-merchant",
+    "states": [
+      {
+        "phase": "ready",
+        "scrollWidth": 390
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390
+      }
+    ]
+  },
+  {
+    "name": "mobile-merchant-in-view",
+    "states": [
+      {
+        "motion": "running",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 99.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1442.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1309.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1310.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1310.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1311.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1311.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1312.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1312.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1313.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1313.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1314.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1314.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1315.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1315.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1316.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1316.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1317.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 1317.7265625
+      }
+    ]
+  },
+  {
+    "name": "mobile-merchant-visible",
+    "states": [
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 8460.7265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 8421.2265625
+      },
+      {
+        "motion": "paused",
+        "phase": "ready",
+        "ready": "true",
+        "scrollWidth": 390,
+        "top": 8421.7265625
+      }
+    ]
+  },
+  {
+    "name": "mobile-merchant-actual-visible",
+    "states": [
+      {
+        "motion": "running",
+        "phase": "ready",
+        "top": 119.7265625
+      },
+      {
+        "motion": "running",
+        "phase": "tapping",
+        "top": 119.7265625
+      },
+      {
+        "motion": "running",
+        "phase": "review",
+        "top": 119.7265625
+      },
+      {
+        "motion": "running",
+        "phase": "authorizing",
+        "top": 119.7265625
+      },
+      {
+        "motion": "running",
+        "phase": "processing",
+        "top": 119.7265625
+      },
+      {
+        "motion": "running",
+        "phase": "complete",
+        "top": 119.7265625
+      }
+    ]
+  }
+]

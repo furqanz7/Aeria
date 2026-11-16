@@ -1,0 +1,120 @@
+{
+  "http": 200,
+  "activeBrandingClean": true,
+  "newSocialImage": true,
+  "resourceCount": 28,
+  "resources": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/manifest.json",
+      "status": 200
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200
+    },
+    {
+      "path": "/visuals/aeria-blossom-sky.webp",
+      "status": 200
+    },
+    {
+      "path": "/visuals/aeria-pearl-butterfly.webp",
+      "status": 200
+    },
+    {
+      "path": "/visuals/aeria-cloud-veil.webp",
+      "status": 200
+    },
+    {
+      "path": "/visuals/aeria-social-blossom.jpg",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/media/8760c4774489e4ba-s.p.woff2",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/css/331a46d923a05d93.css",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/webpack-6e93d87d4b641668.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/4bd1b696-c023c6e3521b1417.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/255-4f84124391a7dac4.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/main-app-1e7b52997e4b4aa6.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/239-f67af46218fa45ff.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/app/layout-5af278bfbef75fb1.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/295-7b4b57fdeb8ff0df.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/app/page-6bd3abbc134f5661.js",
+      "status": 200
+    },
+    {
+      "path": "/favicon.ico",
+      "status": 200
+    },
+    {
+      "path": "/apple-touch-icon.png",
+      "status": 200
+    },
+    {
+      "path": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Flogo.png&w=96&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fvisuals%2Faeria-blossom-sky.webp&w=3840&q=90",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fvisuals%2Faeria-cloud-veil.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fvisuals%2Faeria-pearl-butterfly.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fp2p.webp&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Fterminal.jpeg&w=3840&q=75",
+      "status": 200
+    },
+    {
+      "path": "/_next/image?url=%2Flogo.png&w=64&q=75",
+      "status": 200
+    }
+  ]
+}

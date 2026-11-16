@@ -1,12 +1,32 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+import "./cinema.css";
+import "./product-scenes.css";
+import "./proximity-experience.css";
+import "./native-experience.css";
 import Nav from "@/components/Nav";
 import { SITE_URL } from "@/lib/site";
-
-const title = "Aeria — Proximity Payments";
+const manrope = localFont({
+  src: [
+    {
+      path: "../../public/fonts/manrope-latin-variable.woff2",
+      weight: "400 800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-manrope",
+  display: "swap",
+});
+const italiana = localFont({
+  src: "../../public/fonts/italiana-regular.ttf",
+  variable: "--font-display",
+  weight: "400",
+  display: "swap",
+});
+const title = "Aeria — One identity. Every currency. Everywhere.";
 const description =
-  "World's first universal cross-platform proximity payment system for P2P and peer-to-terminal payments.";
-
+  "A new dimension of payments. Discover Aeria: a universal payment identity and proximity-first vision connecting people, currencies and eligible payment networks.";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title,
@@ -18,39 +38,43 @@ export const metadata: Metadata = {
     description,
     url: SITE_URL,
     siteName: "Aeria",
-    locale: "en_IN",
+    locale: "en_US",
     type: "website",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Aeria" }],
+    images: [
+      {
+        url: "/visuals/aeria-film-social.jpg",
+        width: 1200,
+        height: 800,
+        alt: "Aeria — One identity. Every currency. Everywhere.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.png"],
+    images: ["/visuals/aeria-film-social.jpg"],
   },
   icons: {
     icon: [{ url: "/favicon.ico", sizes: "any" }],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
-
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#709b9d",
   width: "device-width",
   initialScale: 1,
-  colorScheme: "dark",
+  colorScheme: "light",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-black text-zinc-100 antialiased">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-sky-500 focus:px-4 focus:py-2 focus:text-black"
-        >
+    <html lang="en" className={`${manrope.variable} ${italiana.variable}`}>
+      <body>
+        <a href="#main-content" className="skip-link">
           Skip to content
         </a>
         <Nav />

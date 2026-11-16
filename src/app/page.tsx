@@ -1,284 +1,518 @@
-'use client';
-
-import { motion, useReducedMotion } from 'framer-motion';
-import Image from 'next/image';
-import AnimatedBackground from '@/components/AnimatedBackground';
-import Button from '@/components/Button';
-import { TESTFLIGHT_URL } from '@/lib/site';
-
-const fadeUp = {
-  hidden: { y: 24, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const } },
-};
-
-const stagger = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.08 } },
-};
-
-function Section({
-  id,
-  className,
-  children,
-}: {
-  id: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  const reduceMotion = useReducedMotion();
-
-  if (reduceMotion) {
-    return (
-      <section id={id} className={className}>
-        {children}
-      </section>
-    );
-  }
-
-  return (
-    <motion.section
-      id={id}
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: '-80px' }}
-      variants={stagger}
-    >
-      {children}
-    </motion.section>
-  );
-}
-
-function Fade({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  const reduceMotion = useReducedMotion();
-  if (reduceMotion) {
-    return <div className={className}>{children}</div>;
-  }
-  return (
-    <motion.div variants={fadeUp} className={className}>
-      {children}
-    </motion.div>
-  );
-}
+import ProductScene from "@/components/ProductScene";
+import NativeExperience from "@/components/NativeExperience";
+import Button from "@/components/Button";
+import Reveal from "@/components/Reveal";
+import ProximityDemo from "@/components/ProximityDemo";
+import CurrencyDemo from "@/components/CurrencyDemo";
+import CinematicJourney, { Feather } from "@/components/CinematicJourney";
+import OriginalLogo from "@/components/OriginalLogo";
+import AirIdentity from "@/components/AirIdentity";
+import MotionDirector from "@/components/MotionDirector";
+import { Arrow, SaudiRiyal, Symbol } from "@/components/Icons";
+import { TESTFLIGHT_URL } from "@/lib/site";
 
 export default function Home() {
-  const reduceMotion = useReducedMotion();
-
   return (
-    <>
-      <AnimatedBackground />
-      <main id="main-content" className="relative z-10">
-        <section
-          id="hero"
-          className="section-pad flex min-h-[calc(100dvh-3.5rem)] flex-col items-center justify-center text-center"
-        >
-          <motion.div
-            className="section-shell flex flex-col items-center"
-            initial={reduceMotion ? false : 'hidden'}
-            animate={reduceMotion ? undefined : 'show'}
-            variants={stagger}
+    <main id="main-content" className="aeria-garden">
+      <MotionDirector />
+      <CinematicJourney />
+
+      <section id="vision" className="section story-section">
+        <div className="shell">
+          <Reveal>
+            <div className="section-topline">
+              <span className="eyebrow">01 / A MORE CONNECTED WORLD</span>
+              <span className="small-note">The vision behind Aeria</span>
+            </div>
+            <div className="story-heading">
+              <h2>
+                The world is connected.
+                <br />
+                <span>Payments should be, too.</span>
+              </h2>
+              <p>
+                A different app. Another currency. One more account number.
+                Moving money still asks us to navigate a world of disconnected
+                systems.
+                <br />
+                <br />
+                Aeria is being built around a simple idea: start with the
+                person, and bring the right payment networks together.
+              </p>
+            </div>
+          </Reveal>
+          <div
+            className="fragmentation"
+            aria-label="Aeria's vision connects people across currencies and payment methods"
           >
-            <Fade>
-              <p className="mb-6 inline-flex rounded-full border border-sky-400/30 bg-sky-400/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-sky-300 sm:text-sm">
-                Proximity payments
-              </p>
-            </Fade>
-            <Fade>
-              <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl">
-                Aeria
-              </h1>
-            </Fade>
-            <Fade>
-              <p className="mt-4 max-w-2xl text-xl font-medium text-zinc-300 sm:text-3xl">
-                The future of payments.
-              </p>
-            </Fade>
-            <Fade>
-              <p className="mt-6 max-w-2xl text-base text-zinc-400 sm:text-lg">
-                World&apos;s first universal cross-platform proximity payment system for peer-to-peer
-                and peer-to-terminal transactions.
-              </p>
-            </Fade>
-            <Fade>
-              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Button href="#p2p">Explore features</Button>
-                <Button href={TESTFLIGHT_URL} variant="secondary" external>
-                  Download on TestFlight
-                </Button>
-              </div>
-            </Fade>
-            <Fade className="mt-14 w-full max-w-md sm:mt-16 sm:max-w-lg">
-              <div className="media-frame aspect-square p-4 sm:p-6">
-                <Image
-                  src="/logo.png"
-                  alt="Aeria logo"
-                  width={512}
-                  height={512}
-                  className="h-full w-full object-contain"
-                  priority
-                />
-              </div>
-            </Fade>
-          </motion.div>
-        </section>
-
-        <Section id="p2p" className="section-pad bg-black">
-          <div className="section-shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <Fade>
-              <p className="mb-3 text-sm font-medium uppercase tracking-widest text-sky-400">P2P</p>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
-                Peer-to-peer payments.
-              </h2>
-              <p className="mt-5 text-lg text-zinc-400">
-                Send and receive money instantly with proximity. No manual app opening required.
-              </p>
-              <ul className="feature-list mt-8">
-                <li>Homescreen payment UI activates automatically</li>
-                <li>Cross-platform compatibility</li>
-                <li>Zero-configuration networking</li>
-                <li>Enterprise-grade security</li>
-              </ul>
-              <div className="mt-10">
-                <Button href="#terminal" variant="ghost" className="!px-0">
-                  Next: Terminal →
-                </Button>
-              </div>
-            </Fade>
-            <Fade>
-              <div className="media-frame aspect-square max-lg:mx-auto max-lg:max-w-md">
-                <Image
-                  src="/p2p.webp"
-                  alt="Peer-to-peer proximity payments on mobile"
-                  width={960}
-                  height={960}
-                  className="h-full w-full object-contain p-2"
-                  sizes="(max-width: 1024px) 90vw, 480px"
-                />
-              </div>
-            </Fade>
-          </div>
-        </Section>
-
-        <Section id="terminal" className="section-pad bg-zinc-950">
-          <div className="section-shell grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <Fade>
-              <div className="media-frame mx-auto aspect-[2/3] w-full max-w-xs lg:max-w-sm">
-                <Image
-                  src="/terminal.jpeg"
-                  alt="Aeria NFC payment terminal"
-                  width={320}
-                  height={480}
-                  className="h-full w-full object-contain p-2"
-                  sizes="(max-width: 1024px) 70vw, 320px"
-                />
-              </div>
-            </Fade>
-            <Fade>
-              <p className="mb-3 text-sm font-medium uppercase tracking-widest text-sky-400">Terminal</p>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
-                Native NFC terminal.
-              </h2>
-              <p className="mt-5 text-lg text-zinc-400">
-                Tap your phone to pay. Card Rails technology is built for reliability at the point of sale.
-              </p>
-              <ul className="feature-list mt-8">
-                <li>Native NFC integration</li>
-                <li>High reliability with Card Rails</li>
-                <li>Instant confirmation</li>
-                <li>Enterprise security</li>
-              </ul>
-              <motion.div className="mt-10">
-                <Button href="#innovation" variant="ghost" className="!px-0">
-                  Next: Innovation →
-                </Button>
-              </motion.div>
-            </Fade>
-          </div>
-        </Section>
-
-        <Section id="innovation" className="section-pad bg-black">
-          <div className="section-shell text-center">
-            <Fade>
-              <p className="mb-3 text-sm font-medium uppercase tracking-widest text-sky-400">Innovation</p>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Beyond UPI.</h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg text-zinc-400">
-                Replacing Bank Server Rails with Card Rails to reduce transaction failures and latency.
-              </p>
-            </Fade>
-            <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-8">
-              <Fade className="comparison-card border-red-500/20 bg-red-500/5">
-                <h3 className="text-xl font-semibold text-red-400">Traditional UPI</h3>
-                <ul className="feature-list mt-6">
-                  <li>Bank Server Rails dependency</li>
-                  <li>Frequent failures</li>
-                  <li>Manual app opening</li>
-                  <li>Limited proximity options</li>
-                </ul>
-              </Fade>
-              <Fade className="comparison-card border-emerald-500/20 bg-emerald-500/5">
-                <h3 className="text-xl font-semibold text-emerald-400">Aeria</h3>
-                <ul className="feature-list mt-6">
-                  <li>Card Rails reliability</li>
-                  <li>Designed for consistent completion</li>
-                  <li>Homescreen-first experience</li>
-                  <li>Universal proximity</li>
-                </ul>
-              </Fade>
+            <div className="fragment-labels">
+              <span>Different currencies</span>
+              <span>Different networks</span>
+              <span>Different experiences</span>
+            </div>
+            <div className="fragment-line">
+              <span>₹</span>
+              <span>€</span>
+              <span>
+                <SaudiRiyal />
+              </span>
+              <span>$</span>
+              <span>£</span>
+            </div>
+            <div className="connection-stem" />
+            <div className="connection-destination">
+              <OriginalLogo size={32} />
+              <span>One Aeria experience</span>
             </div>
           </div>
-        </Section>
+        </div>
+      </section>
 
-        <Section id="privacy" className="section-pad bg-zinc-950">
-          <div className="section-shell text-center">
-            <Fade>
-              <p className="mb-3 text-sm font-medium uppercase tracking-widest text-sky-400">Privacy</p>
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">Privacy by design.</h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg text-zinc-400">
-                Enterprise-grade security with zero data collection. Your privacy is our priority.
+      <section id="identity" className="section identity-section">
+        <div className="shell split-layout">
+          <Reveal className="section-copy">
+            <span className="eyebrow">02 / YOUR AERIA ID</span>
+            <h2>
+              Uniquely you.
+              <br />
+              <span>Universally Aeria.</span>
+            </h2>
+            <p>
+              A name that feels like yours. An identity designed to connect you
+              to people and businesses, without exchanging long payment details.
+            </p>
+            <p>
+              Find someone by their Aeria ID, through your contacts, or nearby
+              on supported devices. One familiar starting point for every
+              eligible payment.
+            </p>
+            <a href="#p2p" className="text-link">
+              Meet a simpler way to connect <Arrow />
+            </a>
+            <span className="roadmap-label">PRODUCT DIRECTION</span>
+          </Reveal>
+          <AirIdentity />
+        </div>
+      </section>
+
+      <section id="p2p" className="section proximity-section">
+        <div className="shell">
+          <Reveal className="proximity-heading">
+            <div><span className="eyebrow">03 / PROXIMITY, WITH PURPOSE</span>
+            <h2>Closer<br /><span>than ever.</span></h2></div>
+            <p>
+              Some connections are right in front of you.
+              <br />
+              Aeria’s vision makes nearby discovery the natural start of a
+              payment.
+            </p>
+          </Reveal>
+          <ProximityDemo />
+
+        </div>
+      </section>
+
+      <section id="currencies" className="section currency-section">
+        <div className="shell split-layout">
+          <Reveal className="section-copy">
+            <span className="eyebrow">04 / BEYOND BORDERS</span>
+            <h2>
+              A different currency.
+              <br />
+              <span>The same ease.</span>
+            </h2>
+            <p>
+              Send in a currency you know. See what arrives on the other side.
+              Aeria’s ambition is to make the details clear, wherever a
+              supported route can take you.
+            </p>
+            <div className="simple-feature">
+              <Symbol name="globe" />
+              <span>
+                Global by design.
+                <small>
+                  Availability shaped by local rules and partner coverage.
+                </small>
+              </span>
+            </div>
+            <div className="simple-feature">
+              <Symbol name="layers" />
+              <span>
+                Clarity at every step.
+                <small>
+                  Review the rate, fees, final amount and timing first.
+                </small>
+              </span>
+            </div>
+            <span className="roadmap-label">
+              ILLUSTRATIVE EXPERIENCE · PLANNED CAPABILITY
+            </span>
+          </Reveal>
+          <Reveal>
+            <CurrencyDemo />
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="everyday" className="section everyday-section">
+        <div className="shell">
+          <Reveal>
+            <div className="section-topline">
+              <span className="eyebrow">05 / DESIGNED AROUND YOU</span>
+              <span className="small-note">Fewer steps. More life.</span>
+            </div>
+            <div className="story-heading">
+              <h2>
+                Fits into your day.
+                <br />
+                <span>Stays out of your way.</span>
+              </h2>
+              <p>
+                From a familiar contact to a supported system shortcut, Aeria
+                aims to meet you where you already are. A native experience,
+                with you in control.
               </p>
-            </Fade>
-            <div className="mt-12 grid gap-6 sm:grid-cols-3">
+            </div>
+          </Reveal>
+          <div className="everyday-grid">
+            <figure className="daily-art">
+              <NativeExperience />
+              <figcaption>
+                <span>AERIA, WHERE YOU ALREADY ARE.</span>Illustrative native experience ·
+                planned capabilities
+              </figcaption>
+            </figure>
+            <div className="everyday-features">
               {[
-                { title: 'TLS 1.3', desc: 'Latest encryption for data in transit' },
-                { title: 'Apple REST API', desc: 'Native iOS authorization integration' },
-                { title: 'Google OAuth 2.0', desc: 'Secure Android authentication' },
-              ].map((item) => (
-                <Fade
-                  key={item.title}
-                  className="rounded-2xl border border-white/10 bg-black/40 p-6 text-left sm:text-center"
-                >
-                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm text-zinc-400">{item.desc}</p>
-                </Fade>
+                {
+                  icon: "contact" as const,
+                  title: "A familiar name.",
+                  desc: "Contacts and Aeria ID search are planned to help you find the right person.",
+                },
+                {
+                  icon: "layers" as const,
+                  title: "A place in your day.",
+                  desc: "Planned Home Screen widgets give Aeria a familiar starting point on your phone.",
+                },
+                {
+                  icon: "search" as const,
+                  title: "One less step.",
+                  desc: "Spotlight and supported system shortcuts are part of the intended native experience.",
+                },
+              ].map((f, i) => (
+                <div className="everyday-feature" key={f.title}>
+                  <span className="feature-number">0{i + 1}</span>
+                  <Symbol name={f.icon} />
+                  <div>
+                    <h3>{f.title}</h3>
+                    <p>{f.desc}</p>
+                  </div>
+                </div>
               ))}
-            </div>
-            <Fade className="mx-auto mt-12 max-w-3xl rounded-2xl border border-white/10 bg-black/50 p-8 text-left sm:text-center">
-              <h3 className="text-xl font-semibold text-white">Zero data collection</h3>
-              <p className="mt-3 text-zinc-300">
-                Aeria processes transactions locally on your device. No personal data, transaction
-                history, or user information is stored on our servers.
+              <p className="native-note">
+                Planned for iOS and Android using each platform’s supported
+                capabilities. Features will vary by device and release.
               </p>
-            </Fade>
+            </div>
           </div>
-        </Section>
+        </div>
+      </section>
 
-        <footer id="download" className="border-t border-white/10 bg-black py-16">
-          <div className="section-shell flex flex-col items-center gap-8 text-center">
-            <div>
-              <h2 className="text-2xl font-bold text-white sm:text-3xl">Ready to try Aeria?</h2>
-              <p className="mt-3 max-w-lg text-zinc-400">
-                Join the TestFlight beta and experience proximity payments firsthand.
-              </p>
+      <section id="terminal" className="section merchant-section">
+        <div className="shell merchant-layout">
+          <figure className="terminal-art">
+            <ProductScene merchant />
+            <figcaption>
+              Merchant discovery & tap · product concept.
+              <br />
+              An exploration of form, not final hardware specifications.
+            </figcaption>
+          </figure>
+          <Reveal className="section-copy">
+            <span className="eyebrow">06 / FOR MERCHANTS & BUSINESSES</span>
+            <h2>
+              Good for people.
+              <br />
+              <span>Made for possibility.</span>
+            </h2>
+            <p>
+              A more connected way to accept payments. Aeria’s merchant vision
+              brings the same considered experience to the other side of the
+              counter.
+            </p>
+            <div className="merchant-features">
+              <div>
+                <span>01</span>
+                <h3>Aeria Terminal</h3>
+                <p>A dedicated contactless acceptance concept.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <h3>More ways to accept</h3>
+                <p>
+                  Compatible terminals and smartphone acceptance, where
+                  supported.
+                </p>
+              </div>
+              <div>
+                <span>03</span>
+                <h3>Built to connect</h3>
+                <p>
+                  Planned merchant integrations and business payment
+                  infrastructure.
+                </p>
+              </div>
             </div>
-            <Button href={TESTFLIGHT_URL} external>
-              Download on TestFlight
-            </Button>
-            <p className="text-sm text-zinc-500">
-              © {new Date().getFullYear()} Aeria. Universal cross-platform proximity payments.
+            <p className="merchant-note">
+              Acceptance requires compatible infrastructure and an approved
+              acquiring route. Merchant payouts are a separate process. No
+              universal NFC compatibility is implied.
+            </p>
+            <a href="#innovation" className="text-link">
+              Explore the connected ecosystem <Arrow />
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="innovation" className="section ecosystem-section">
+        <div className="shell">
+          <Reveal className="centered-heading">
+            <span className="eyebrow">
+              07 / ONE EXPERIENCE, MANY POSSIBILITIES
+            </span>
+            <h2>
+              Many rails.
+              <br />
+              <span>One Aeria.</span>
+            </h2>
+            <p>
+              The experience should feel simple. The connections underneath can
+              be extraordinary.
+            </p>
+          </Reveal>
+          <div className="ecosystem-map">
+            <div className="ecosystem-side">
+              <span>
+                <Symbol name="contact" />
+                People
+              </span>
+              <span>
+                <Symbol name="nearby" />
+                Merchants
+              </span>
+              <span>
+                <Symbol name="layers" />
+                Businesses
+              </span>
+            </div>
+            <div className="network-threads">
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className="ecosystem-core">
+              <strong>Aeria</strong>
+              <span>Identity & orchestration</span>
+            </div>
+            <div className="network-threads right">
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className="ecosystem-side">
+              <span>
+                <Symbol name="card" />
+                Card networks
+              </span>
+              <span>
+                <Symbol name="bank" />
+                Bank-based methods
+              </span>
+              <span>
+                <Symbol name="coin" />
+                Digital currencies
+              </span>
+            </div>
+          </div>
+          <div className="ecosystem-explainer">
+            <p>
+              Aeria is designed to connect identity, discovery and payment
+              routing in one interface. Independent partner connections make
+              room for multiple funding and payout methods.
+            </p>
+            <p>
+              Licensed partners would handle regulated financial execution and
+              custody where required. Each route depends on eligibility, network
+              participation, regulations and partner coverage.
             </p>
           </div>
-        </footer>
-      </main>
-    </>
+          <div className="architecture-strip">
+            <span>THE INTENDED ARCHITECTURE</span>
+            <span>Experience</span>
+            <Arrow />
+            <span>Identity & intelligence</span>
+            <Arrow />
+            <span>Orchestration</span>
+            <Arrow />
+            <span>Financial partners</span>
+          </div>
+          <p className="map-note">
+            A product architecture vision. Categories shown do not represent
+            confirmed partnerships or live payment routes.
+          </p>
+        </div>
+      </section>
+
+      <section id="privacy" className="section trust-section">
+        <div className="shell">
+          <Reveal>
+            <div className="trust-heading">
+              <span className="trust-emblem">
+                <Symbol name="shield" />
+              </span>
+              <span className="eyebrow">08 / BUILT ON INTENTION</span>
+              <h2>
+                Simplicity on the surface.
+                <br />
+                <span>Care in every layer.</span>
+              </h2>
+              <p>
+                Trust starts with thoughtful design. These principles guide the
+                Aeria experience we’re building.
+              </p>
+            </div>
+          </Reveal>
+          <div className="trust-grid">
+            <div>
+              <span>01</span>
+              <h3>Your money. Your control.</h3>
+              <p>
+                Aeria’s noncustodial direction means it is designed not to hold
+                your funds or digital assets. Licensed partners handle regulated
+                money movement and safeguarding where required.
+              </p>
+            </div>
+            <div>
+              <span>02</span>
+              <h3>Details you approve.</h3>
+              <p>
+                Device-bound authorization is intended to bind approval to the
+                recipient, amount, currency and transaction expiry. Nearby
+                discovery alone is never payment permission.
+              </p>
+            </div>
+            <div>
+              <span>03</span>
+              <h3>Protection by design.</h3>
+              <p>
+                Tokenized credentials, encrypted communication, recipient
+                verification and transaction checks form part of the planned
+                architecture. These principles guide the platform’s development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="questions" className="section questions-section">
+        <div className="shell questions-layout">
+          <Reveal>
+            <span className="eyebrow">A LITTLE MORE CLARITY</span>
+            <h2>
+              Before you
+              <br />
+              <span>take flight.</span>
+            </h2>
+          </Reveal>
+          <div className="faq-list">
+            {[
+              [
+                "What is Aeria?",
+                "Aeria is built around a universal payment identity and a proximity-first experience that orchestrates eligible payment routes through financial partners.",
+              ],
+              [
+                "What can I try today?",
+                "The existing Aeria TestFlight beta link is available below. Access depends on Apple’s TestFlight and the beta’s enrollment status. The interactions on this website are product concepts and do not establish the beta’s current capabilities.",
+              ],
+              [
+                "Does Aeria hold my money?",
+                "Aeria is being designed as a noncustodial experience and orchestration platform. Licensed partners would execute regulated payments and hold or safeguard funds where legally required.",
+              ],
+              [
+                "Will it work in every country and currency?",
+                "That is the long-term ambition, not a claim of current coverage. Availability will depend on partner coverage, local regulations, eligible payment methods and approved routes.",
+              ],
+              [
+                "Does being nearby send a payment automatically?",
+                "No. The intended flow requires the sender to select and confirm the recipient, review the amount and explicitly authorize the transaction. Proximity is a discovery method, never authorization.",
+              ],
+              [
+                "Can any merchant terminal accept Aeria?",
+                "No universal terminal compatibility is claimed. Acceptance will require supported hardware or software, a compatible integration and an approved acquiring route. Merchant payout is a separate process.",
+              ],
+            ].map(([q, a]) => (
+              <details key={q}>
+                <summary>
+                  {q}
+                  <span>+</span>
+                </summary>
+                <p>{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="download" className="final-cta">
+        <div className="return-to-light" aria-hidden="true" />
+        <div className="shell closing-content">
+          <Feather />
+          <span className="eyebrow">A NEW DIMENSION OF PAYMENTS</span>
+          <h2>
+            The future is closer
+            <br />
+            than you think.
+          </h2>
+          <p>One identity. Every currency. Everywhere.</p>
+          <Button href={TESTFLIGHT_URL} external>
+            Fly with Aeria
+          </Button>
+          <small>
+            Explore the TestFlight beta.
+            <br />
+            Access and features depend on the current beta release.
+          </small>
+        </div>
+      </section>
+      <footer className="site-footer">
+        <div className="shell">
+          <div className="footer-main">
+            <a className="brand" href="#hero">
+              <OriginalLogo className="wordmark-logo" size={32} />
+              <span>Aeria</span>
+            </a>
+            <span>A new dimension of connection.</span>
+            <nav aria-label="Footer">
+              <a href="#identity">Aeria ID</a>
+              <a href="#p2p">The experience</a>
+              <a href="#terminal">Merchants</a>
+              <a href="#privacy">Trust & security</a>
+            </nav>
+            <a className="back-top" href="#hero" aria-label="Back to top">
+              ↑
+            </a>
+          </div>
+          <div className="footer-bottom">
+            <p>© {new Date().getFullYear()} Aeria.</p>
+            <p>
+              A global vision. Availability depends on approved partners, routes
+              and local regulations.
+            </p>
+            <span>Fly with Aeria.</span>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }

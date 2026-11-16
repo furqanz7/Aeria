@@ -1,0 +1,1274 @@
+[
+  {
+    "name": "desktop-ecosystem",
+    "before": {
+      "scroll": 7384,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "true",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "142.594px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0.59375px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "0.0234722"
+        },
+        {
+          "left": "71.5938px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "70.3984px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "212.398px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "0.0234722"
+        },
+        {
+          "left": "141.398px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        },
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-77.5547px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "79.0703px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 7384,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "true",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "3.54688px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "0.138889"
+        },
+        {
+          "left": "74.5469px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "145.547px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "209.445px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "0.138889"
+        },
+        {
+          "left": "138.445px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "67.4453px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        },
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-77.5547px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "79.0703px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    }
+  },
+  {
+    "name": "desktop-currency",
+    "before": {
+      "scroll": 4993,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "true",
+      "eco": [
+        {
+          "left": "5.32031px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "0.208333"
+        },
+        {
+          "left": "76.3203px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "147.32px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "207.672px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "0.208333"
+        },
+        {
+          "left": "136.672px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "65.6719px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        },
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "2.17969px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "158.812px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 4993,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "true",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "0"
+        },
+        {
+          "left": "70.9922px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "141.992px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "213px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "0"
+        },
+        {
+          "left": "141.992px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "70.9922px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        },
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-23.8672px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "132.758px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    }
+  },
+  {
+    "name": "reduced",
+    "proof": {
+      "scroll": 4914,
+      "viewport": [
+        1440,
+        1000
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "true",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "none",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "none",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "none",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "none",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "none",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "none",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "none"
+        },
+        {
+          "top": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "none"
+        }
+      ],
+      "currency": [
+        {
+          "left": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "none"
+        },
+        {
+          "left": "auto",
+          "state": "running",
+          "name": "none",
+          "display": "none"
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile-ecosystem",
+    "before": {
+      "scroll": 4340,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "0px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "7.5px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-39.1094px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "49.8906px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 2241,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "0px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "7.5px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-39.1094px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "49.8906px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile-currency",
+    "before": {
+      "scroll": 2261,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "0px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "7.5px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-39.1094px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "49.8906px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 2290,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "0px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "7.5px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-39.1094px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "49.8906px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile-currency-in-view",
+    "before": {
+      "scroll": 5324.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "true",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "0px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "7.5px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-30.0469px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "58.9609px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 5328.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "true",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "0px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "7.5px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-25.9219px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "63.0781px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile-ecosystem-in-view",
+    "before": {
+      "scroll": 9163,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "true",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "1px",
+          "state": "running",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "6.49219px",
+          "state": "running",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-21.8047px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "67.1953px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 7712,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "1.25px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "6.24219px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-21.8047px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "67.1953px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile-ecosystem-settled",
+    "before": {
+      "scroll": 9163.5,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "true",
+      "currencyActive": "false",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "running",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "2.16406px",
+          "state": "running",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "5.32812px",
+          "state": "running",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-21.8047px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "67.1953px",
+          "state": "paused",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 5630,
+      "viewport": [
+        390,
+        844
+      ],
+      "gates": {
+        "motionReady": "true",
+        "motionPaused": "false",
+        "reducedMotion": "false",
+        "pageHidden": "false"
+      },
+      "ecoActive": "false",
+      "currencyActive": "true",
+      "eco": [
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        },
+        {
+          "left": "0px",
+          "state": "paused",
+          "name": "ecosystem-route-flow",
+          "opacity": "1"
+        }
+      ],
+      "mobile": [
+        {
+          "top": "2.5px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        },
+        {
+          "top": "4.99219px",
+          "state": "paused",
+          "name": "ecosystem-mobile-flow",
+          "display": "block"
+        }
+      ],
+      "currency": [
+        {
+          "left": "-15.2109px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        },
+        {
+          "left": "73.7891px",
+          "state": "running",
+          "name": "currency-route-flow",
+          "display": "block"
+        }
+      ]
+    }
+  },
+  {
+    "name": "mobile-ecosystem-visible-readonly",
+    "before": {
+      "scroll": 9064,
+      "top": 149.3125,
+      "active": "true",
+      "threads": [
+        {
+          "top": "0.992188px",
+          "state": "running"
+        },
+        {
+          "top": "6.5px",
+          "state": "running"
+        }
+      ]
+    },
+    "after": {
+      "scroll": 9064,
+      "top": 149.3125,
+      "active": "true",
+      "threads": [
+        {
+          "top": "11.9141px",
+          "state": "running"
+        },
+        {
+          "top": "10.5781px",
+          "state": "running"
+        }
+      ]
+    }
+  }
+]
