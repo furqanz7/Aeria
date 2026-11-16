@@ -5,6 +5,7 @@ import "./cinema.css";
 import "./product-scenes.css";
 import "./proximity-experience.css";
 import "./native-experience.css";
+import "./iridescence.css";
 import Nav from "@/components/Nav";
 import { SITE_URL } from "@/lib/site";
 const manrope = localFont({

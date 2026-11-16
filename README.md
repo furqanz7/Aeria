@@ -97,3 +97,5 @@ Current site-wide motion repair: [playback controller, mobile sizing and browser
 Beyond Borders and the ecosystem map now have [continuous connection motion on desktop and mobile](docs/ROUTE-MOTION-REPAIR.md), following the shared motion preferences and Pause control.
 
 The Aeria brand wordmark now uses [reference-led vector lettering](docs/WORDMARK-REFERENCE.md) in the hero, header, footer and ecosystem map. Italiana remains the editorial display font; it is no longer used to typeset those wordmarks.
+
+A restrained [iridescent accent layer](docs/IRIDESCENCE.md) adds spectral highlights to the existing cobalt wings and connection lights. It follows the shared Pause and reduced-motion settings.
