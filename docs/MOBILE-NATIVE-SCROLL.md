@@ -1,5 +1,7 @@
 # Mobile cinematic scrolling repair — 17 November 2026
 
+> Superseded. The user rejected this mobile-only presentation and required the full desktop cinematic sequence on every device. See [UNIFIED-CINEMA.md](UNIFIED-CINEMA.md). The notes below describe the rejected ff8cde4 release.
+
 ## Reported failure
 
 The user's native iPhone screenshots IMG_3810.PNG and IMG_3811.PNG show an abrupt navy area below the artwork and unstable scene/header positioning while Safari's controls change. The 23b15b8 JavaScript scroll-following stage did not resolve the native problem.

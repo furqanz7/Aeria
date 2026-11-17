@@ -1,15 +1,17 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type RefObject } from "react";
 import type { MotionValue } from "framer-motion";
 
 /** Samples the original wing artwork into light; scroll carries it into the next scene. */
 export default function WingDissolve({
   progress,
   active,
+  wings,
 }: {
   progress: MotionValue<number>;
   active: boolean;
+  wings: RefObject<HTMLDivElement | null>;
 }) {
   const canvas = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
@@ -19,6 +21,9 @@ export default function WingDissolve({
     if (!ctx) return;
     let width = 0,
       height = 0,
+      wingWidth = 0,
+      wingHeight = 0,
+      wingTop = 0,
       frame = 0,
       loaded = false;
     let dots: {
@@ -59,6 +64,11 @@ export default function WingDissolve({
     const resize = () => {
       width = el.clientWidth;
       height = el.clientHeight;
+      // Read untransformed layout so dust follows the actual responsive artwork.
+      const artwork = wings.current;
+      wingWidth = artwork?.offsetWidth ?? 0;
+      wingHeight = artwork?.offsetHeight ?? 0;
+      wingTop = artwork?.offsetTop ?? 0;
       const dpr = Math.min(window.devicePixelRatio, 1.5);
       el.width = width * dpr;
       el.height = height * dpr;
@@ -66,27 +76,15 @@ export default function WingDissolve({
     };
     const observer = new ResizeObserver(resize);
     observer.observe(el);
+    if (wings.current) observer.observe(wings.current);
     resize();
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
       const p = progress.get();
       const dissolve = Math.max(0, Math.min(1, (p - 0.29) / 0.58));
       if (loaded && dissolve > 0 && dissolve < 1 && !document.hidden) {
-        const wingWidth = Math.min(
-          width *
-            (width <= 600
-              ? 0.94
-              : width <= 859
-                ? 0.8
-                : width <= 1100
-                  ? 0.68
-                  : 0.52),
-          900,
-        );
         const scale = 1 - 0.32 * p;
-        const wingHeight = wingWidth / 1.9;
-        const top =
-          height * (width <= 600 ? 0.54 : width <= 1100 ? 0.57 : 0.54) -
+        const top = wingTop -
           (p < 0.45 ? (p / 0.45) * 50 : 50 + ((p - 0.45) / 0.55) * 145);
         const travel = dissolve * dissolve;
         const alpha = Math.sin(dissolve * Math.PI) * 0.72;
@@ -119,6 +117,6 @@ export default function WingDissolve({
       observer.disconnect();
       source.onload = null;
     };
-  }, [active, progress]);
+  }, [active, progress, wings]);
   return <canvas ref={canvas} className="film-wing-dust" aria-hidden="true" />;
 }

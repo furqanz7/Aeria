@@ -159,13 +159,45 @@ p {
 .cinematic-journey {
   height: 250svh;
   position: relative;
-  background: #051728;
+  background: #426f78;
   color: var(--gold);
+  isolation: isolate;
+}
+/* The same native pin and scroll timeline run on every viewport. The normal
+   document backdrop provides artwork outside Safari's viewport-attached layer. */
+.film-scroll-track {
+  position: absolute;
+  inset: 0 0 100vh;
+  inset-block-end: 100lvh;
+  pointer-events: none;
+}
+.film-bleed {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+.film-bleed-sky,
+.film-bleed-depth {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+}
+.film-bleed-sky {
+  background-image: url("/visuals/aeria-film-ascent-iridescent.webp");
+  opacity: var(--film-sky-opacity, 1);
+}
+.film-bleed-depth {
+  background-image: url("/visuals/aeria-film-depth-iridescent.webp");
+  filter: saturate(.7) brightness(.68);
+  opacity: var(--film-depth-opacity, 0);
 }
 .film-stage {
-  height: 100svh;
-  height: 100dvh;
-  min-height: min(650px, 100svh);
+  height: 100vh;
+  height: 100lvh;
+  min-height: 0;
   position: sticky;
   top: 0;
   overflow: hidden;
@@ -1168,73 +1200,23 @@ html[data-page-hidden="true"] *,
     margin: 22px 0 0;
   }
   .film-bottom {
-    top: calc(var(--film-chapter-height) - 150px - var(--safe-bottom));
-    bottom: auto;
+    bottom: calc(32px + var(--safe-bottom));
     left: max(32px, var(--safe-left));
     right: max(32px, var(--safe-right));
-  }
-  /* Native document scrolling on mobile: no scroll-following transform, sticky
-     stage, or dynamic-toolbar height compensation. lvh is stable as bars move. */
-  .cinematic-journey {
-    height: auto;
-    background: #092d3c;
-  }
-  .film-stage {
-    --film-chapter-height: max(720px, 100vh, 150vw);
-    --film-chapter-height: max(720px, 100lvh, 150vw);
-    position: relative;
-    top: auto;
-    height: calc(var(--film-chapter-height) * 2);
-    min-height: 0;
-    will-change: auto;
-    background: #092d3c;
-  }
-  .film-sky,
-  .film-depth {
-    height: calc(var(--film-chapter-height) + 1px);
-    opacity: 1;
-    transform: none;
-    will-change: auto;
-  }
-  .film-sky {
-    -webkit-mask-image: linear-gradient(#000 80%, transparent);
-    mask-image: linear-gradient(#000 80%, transparent);
-  }
-  .film-depth {
-    top: calc(var(--film-chapter-height) - 1px);
-    -webkit-mask-image: linear-gradient(transparent, #000 18%);
-    mask-image: linear-gradient(transparent, #000 18%);
-  }
-  .film-intro,
-  .film-wings,
-  .film-deep-copy {
-    opacity: 1;
-    transform: none;
-    will-change: auto;
-  }
-  .film-wing-dust {
-    display: none;
-  }
-  .film-feathers {
-    height: var(--film-chapter-height);
-  }
-  .film-stage .film-cloud-drift {
-    inset: calc(var(--film-chapter-height) * .4) -10% auto;
-    height: calc(var(--film-chapter-height) * .7);
   }
   .film-intro h1 {
     font-size: 24vw;
   }
   .film-intro {
-    top: calc(var(--film-chapter-height) * .26);
+    top: 26%;
   }
   .film-wings {
-    top: calc(var(--film-chapter-height) * .55);
+    top: 55%;
     width: 80vw;
     margin-left: -40vw;
   }
   .film-deep-copy {
-    top: calc(var(--film-chapter-height) * 1.27);
+    top: 27%;
   }
   .film-deep-copy h2 {
     font-size: 78px;
@@ -1305,7 +1287,7 @@ html[data-page-hidden="true"] *,
     background-position: 57% center;
   }
   .film-intro {
-    top: calc(var(--film-chapter-height) * .29);
+    top: 29%;
     left: 5%;
     right: 5%;
   }
@@ -1323,7 +1305,7 @@ html[data-page-hidden="true"] *,
     margin-top: 14px;
   }
   .film-wings {
-    top: calc(var(--film-chapter-height) * .54);
+    top: 54%;
     width: 94vw;
     margin-left: -47vw;
     aspect-ratio: 1.9;
@@ -1336,6 +1318,7 @@ html[data-page-hidden="true"] *,
   .film-bottom {
     left: max(22px, var(--safe-left));
     right: max(22px, var(--safe-right));
+    bottom: calc(28px + var(--safe-bottom));
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -1353,7 +1336,7 @@ html[data-page-hidden="true"] *,
     justify-content: center;
   }
   .film-deep-copy {
-    inset: calc(var(--film-chapter-height) * 1.28) 6% auto;
+    inset: 28% 6% auto;
   }
   .film-deep-copy h2 {
     font-size: clamp(46px, 13vw, 70px);
@@ -1592,6 +1575,20 @@ html[data-page-hidden="true"] *,
     font-size: 48px;
   }
 }
+/* Keep the same sequence readable in short landscape viewports. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .film-intro { top: 22%; }
+  .film-intro h1 { font-size: 12vh; margin-top: 10px; }
+  .film-signature { font-size: 20px; margin-top: 8px; }
+  .film-wings {
+    top: 52%;
+    width: min(60vw, 70vh);
+    margin-left: calc(min(60vw, 70vh) / -2);
+  }
+  .film-deep-copy { top: 19%; }
+  .film-deep-copy h2 { font-size: 11vh; margin: 15px 0; }
+  .film-deep-copy > p:last-child { font-size: 18px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .cinematic-journey {
     height: auto;
@@ -1599,13 +1596,13 @@ html[data-page-hidden="true"] *,
   .film-stage {
     position: relative;
   }
-  @media (min-width: 860px) {
-    .film-deep-copy { display: none; }
-    .film-depth { opacity: 0; transform: none; }
-    .film-sky,
-    .film-intro,
-    .film-wings { opacity: 1; transform: none; }
-  }
+  .film-deep-copy { display: none; }
+  .film-depth,
+  .film-bleed-depth { opacity: 0; transform: none; }
+  .film-sky,
+  .film-bleed-sky,
+  .film-intro,
+  .film-wings { opacity: 1; transform: none; }
   .film-intro,
   .film-world,
   .film-stage,

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useSyncExternalStore } from "react";
+import { useEffect, useRef } from "react";
 import {
   motion,
   type MotionStyle,
@@ -77,30 +77,18 @@ export function LightField({ active = true }: { active?: boolean }) {
   );
 }
 
-// CSS supplies the mobile layout from the first paint. This subscription only
-// prevents desktop scroll effects from doing unnecessary work on small screens.
-const compactFilmQuery = "(max-width: 859px)";
-function subscribeCompactFilm(listener: () => void) {
-  const query = window.matchMedia(compactFilmQuery);
-  query.addEventListener("change", listener);
-  return () => query.removeEventListener("change", listener);
-}
-const getCompactFilm = () => window.matchMedia(compactFilmQuery).matches;
-const getServerCompactFilm = () => false;
-
 export default function CinematicJourney() {
   const ref = useRef<HTMLElement>(null);
-  const compact = useSyncExternalStore(
-    subscribeCompactFilm,
-    getCompactFilm,
-    getServerCompactFilm,
-  );
+  const timeline = useRef<HTMLDivElement>(null);
+  const wings = useRef<HTMLDivElement>(null);
   const active = useInView(ref, { margin: "100px" });
   const { ready, reduced, paused, visible } = useMotionSettings();
   const playing = ready && !reduced && !paused && visible && active;
   const { scrollYProgress: progress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
+    target: timeline,
+    // The end is measured against the document, not the changing visual viewport.
+    // The track ends exactly where the native sticky stage releases.
+    offset: ["start start", "end start"],
   });
   const skyOpacity = useTransform(progress, [0, 0.28, 0.66], [1, 1, 0]);
   const depthOpacity = useTransform(progress, [0.25, 0.65], [0, 1]);
@@ -114,27 +102,30 @@ export default function CinematicJourney() {
   const cameraScale = useTransform(progress, [0, 1], [1.04, 1.24]);
   const lineScale = useTransform(progress, [0, 1], [0.05, 1]);
   return (
-    <section
+    <motion.section
       ref={ref}
       id="hero"
       className={`cinematic-journey ${paused ? "film-paused" : ""} ${active ? "film-active" : ""}`}
       aria-label="Aeria — a new dimension of payments"
+      style={reduced ? undefined : {
+        "--film-sky-opacity": skyOpacity,
+        "--film-depth-opacity": depthOpacity,
+        "--film-camera-scale": cameraScale,
+        "--film-title-opacity": titleOpacity,
+        "--film-title-y": titleY,
+        "--film-deep-opacity": deepTextOpacity,
+        "--film-deep-y": deepTextY,
+        "--film-wing-y": wingY,
+        "--film-wing-scale": wingScale,
+        "--film-wing-opacity": wingOpacity,
+      } as MotionStyle}
     >
-      <motion.div
-        className="film-stage"
-        style={reduced || compact ? undefined : {
-          "--film-sky-opacity": skyOpacity,
-          "--film-depth-opacity": depthOpacity,
-          "--film-camera-scale": cameraScale,
-          "--film-title-opacity": titleOpacity,
-          "--film-title-y": titleY,
-          "--film-deep-opacity": deepTextOpacity,
-          "--film-deep-y": deepTextY,
-          "--film-wing-y": wingY,
-          "--film-wing-scale": wingScale,
-          "--film-wing-opacity": wingOpacity,
-        } as MotionStyle}
-      >
+      <div ref={timeline} className="film-scroll-track" aria-hidden="true" />
+      <div className="film-bleed" aria-hidden="true">
+        <div className="film-bleed-sky" />
+        <div className="film-bleed-depth" />
+      </div>
+      <div className="film-stage">
         <div className="film-world film-sky">
           <Image
             src="/visuals/aeria-film-ascent-iridescent.webp"
@@ -164,11 +155,11 @@ export default function CinematicJourney() {
           <h1 aria-label="Aeria"><AeriaWordmark /></h1>
           <p className="film-signature">Fly with Aeria.</p>
         </div>
-        <div className="film-wings" aria-hidden="true">
+        <div ref={wings} className="film-wings" aria-hidden="true">
           <div className="wing-half wing-left" />
           <div className="wing-half wing-right" />
         </div>
-        <WingDissolve progress={progress} active={playing && !compact} />
+        <WingDissolve progress={progress} active={playing} wings={wings} />
         <div className="film-cloud-drift" aria-hidden="true" />
         <div className="film-feathers" aria-hidden="true">
           {Array.from({ length: 7 }, (_, i) => (
@@ -210,7 +201,7 @@ export default function CinematicJourney() {
             <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
           </button>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 }
