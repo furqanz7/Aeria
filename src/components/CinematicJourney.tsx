@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useSyncExternalStore } from "react";
 import {
   motion,
+  type MotionStyle,
   useInView,
   useScroll,
   useTransform,
@@ -76,58 +77,38 @@ export function LightField({ active = true }: { active?: boolean }) {
   );
 }
 
+// CSS supplies the mobile layout from the first paint. This subscription only
+// prevents desktop scroll effects from doing unnecessary work on small screens.
+const compactFilmQuery = "(max-width: 859px)";
+function subscribeCompactFilm(listener: () => void) {
+  const query = window.matchMedia(compactFilmQuery);
+  query.addEventListener("change", listener);
+  return () => query.removeEventListener("change", listener);
+}
+const getCompactFilm = () => window.matchMedia(compactFilmQuery).matches;
+const getServerCompactFilm = () => false;
+
 export default function CinematicJourney() {
   const ref = useRef<HTMLElement>(null);
-  const stageRef = useRef<HTMLDivElement>(null);
-  const [mobilePin, setMobilePin] = useState({ enabled: false, start: 0, distance: 0 });
+  const compact = useSyncExternalStore(
+    subscribeCompactFilm,
+    getCompactFilm,
+    getServerCompactFilm,
+  );
   const active = useInView(ref, { margin: "100px" });
   const { ready, reduced, paused, visible } = useMotionSettings();
   const playing = ready && !reduced && !paused && visible && active;
-  const { scrollY, scrollYProgress: progress } = useScroll({
+  const { scrollYProgress: progress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
-  useEffect(() => {
-    const hero = ref.current;
-    const stage = stageRef.current;
-    if (!hero || !stage) return;
-    const mobile = window.matchMedia("(max-width: 859px)");
-    let frame = 0;
-    const measure = () => {
-      const next = {
-        enabled: mobile.matches,
-        start: hero.getBoundingClientRect().top + window.scrollY,
-        distance: Math.max(0, hero.offsetHeight - stage.offsetHeight),
-      };
-      setMobilePin(previous => previous.enabled === next.enabled &&
-        previous.start === next.start && previous.distance === next.distance ? previous : next);
-    };
-    const resize = new ResizeObserver(() => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(measure);
-    });
-    resize.observe(hero);
-    resize.observe(stage);
-    mobile.addEventListener("change", measure);
-    measure();
-    return () => {
-      resize.disconnect();
-      mobile.removeEventListener("change", measure);
-      cancelAnimationFrame(frame);
-    };
-  }, []);
-  // Safari clips viewport-attached layers at its floating browser controls.
-  // Keep the mobile scene in document flow and reproduce its pin with scroll motion.
-  const stageY = useTransform(scrollY,
-    [mobilePin.start, mobilePin.start + Math.max(1, mobilePin.distance)],
-    [0, mobilePin.distance]);
   const skyOpacity = useTransform(progress, [0, 0.28, 0.66], [1, 1, 0]);
   const depthOpacity = useTransform(progress, [0.25, 0.65], [0, 1]);
   const titleOpacity = useTransform(progress, [0, 0.2, 0.43], [1, 1, 0]);
-  const titleY = useTransform(progress, [0, 0.5], [0, -100]);
+  const titleY = useTransform(progress, [0, 0.5], ["0px", "-100px"]);
   const deepTextOpacity = useTransform(progress, [0.58, 0.82], [0, 1]);
-  const deepTextY = useTransform(progress, [0.55, 0.84], [45, 0]);
-  const wingY = useTransform(progress, [0, 0.45, 1], [0, -50, -195]);
+  const deepTextY = useTransform(progress, [0.55, 0.84], ["45px", "0px"]);
+  const wingY = useTransform(progress, [0, 0.45, 1], ["0px", "-50px", "-195px"]);
   const wingScale = useTransform(progress, [0, 1], [1, 0.68]);
   const wingOpacity = useTransform(progress, [0, 0.3, 0.67], [1, 1, 0]);
   const cameraScale = useTransform(progress, [0, 1], [1.04, 1.24]);
@@ -139,14 +120,22 @@ export default function CinematicJourney() {
       className={`cinematic-journey ${paused ? "film-paused" : ""} ${active ? "film-active" : ""}`}
       aria-label="Aeria — a new dimension of payments"
     >
-      <motion.div ref={stageRef} className="film-stage"
-        style={{ y: mobilePin.enabled && !reduced ? stageY : 0 }}>
-        <motion.div
-          className="film-world film-sky"
-          style={
-            reduced ? undefined : { opacity: skyOpacity, scale: cameraScale }
-          }
-        >
+      <motion.div
+        className="film-stage"
+        style={reduced || compact ? undefined : {
+          "--film-sky-opacity": skyOpacity,
+          "--film-depth-opacity": depthOpacity,
+          "--film-camera-scale": cameraScale,
+          "--film-title-opacity": titleOpacity,
+          "--film-title-y": titleY,
+          "--film-deep-opacity": deepTextOpacity,
+          "--film-deep-y": deepTextY,
+          "--film-wing-y": wingY,
+          "--film-wing-scale": wingScale,
+          "--film-wing-opacity": wingOpacity,
+        } as MotionStyle}
+      >
+        <div className="film-world film-sky">
           <Image
             src="/visuals/aeria-film-ascent-iridescent.webp"
             alt=""
@@ -156,15 +145,8 @@ export default function CinematicJourney() {
             sizes="100vw"
           />
           <div className="film-rays film-rays--sky" aria-hidden="true" />
-        </motion.div>
-        <motion.div
-          className="film-world film-depth"
-          style={
-            reduced
-              ? { opacity: 0 }
-              : { opacity: depthOpacity, scale: cameraScale }
-          }
-        >
+        </div>
+        <div className="film-world film-depth">
           <Image
             src="/visuals/aeria-film-depth-iridescent.webp"
             alt=""
@@ -173,43 +155,27 @@ export default function CinematicJourney() {
             sizes="100vw"
           />
           <div className="film-rays film-rays--sea" aria-hidden="true" />
-        </motion.div>
+        </div>
         <div className="film-vignette" />
         <LightField active={playing} />
         <div className="film-grain" aria-hidden="true" />
-        <motion.div
-          className="film-intro"
-          style={reduced ? undefined : { opacity: titleOpacity, y: titleY }}
-        >
+        <div className="film-intro">
           <p className="film-kicker">A NEW DIMENSION OF PAYMENTS</p>
-            <h1 aria-label="Aeria"><AeriaWordmark /></h1>
+          <h1 aria-label="Aeria"><AeriaWordmark /></h1>
           <p className="film-signature">Fly with Aeria.</p>
-        </motion.div>
-        <motion.div
-          className="film-wings"
-          style={
-            reduced
-              ? undefined
-              : { y: wingY, scale: wingScale, opacity: wingOpacity }
-          }
-          aria-hidden="true"
-        >
+        </div>
+        <div className="film-wings" aria-hidden="true">
           <div className="wing-half wing-left" />
           <div className="wing-half wing-right" />
-        </motion.div>
-        <WingDissolve progress={progress} active={playing} />
+        </div>
+        <WingDissolve progress={progress} active={playing && !compact} />
         <div className="film-cloud-drift" aria-hidden="true" />
         <div className="film-feathers" aria-hidden="true">
           {Array.from({ length: 7 }, (_, i) => (
             <Feather key={i} className={`feather-${i}`} />
           ))}
         </div>
-        <motion.div
-          className="film-deep-copy"
-          style={
-            reduced ? undefined : { opacity: deepTextOpacity, y: deepTextY }
-          }
-        >
+        <div className="film-deep-copy">
           <p className="film-kicker">CONNECTION, WITHOUT BOUNDARIES</p>
           <h2>
             One identity.
@@ -222,7 +188,7 @@ export default function CinematicJourney() {
             A familiar connection.
             <br />A world of possibility.
           </p>
-        </motion.div>
+        </div>
         <div className="film-bottom">
           <span className="film-platform">
             THE WORLD’S UNIVERSAL
