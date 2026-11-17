@@ -83,7 +83,8 @@ export default function CinematicJourney() {
   const wings = useRef<HTMLDivElement>(null);
   const active = useInView(ref, { margin: "100px" });
   const { ready, reduced, paused, visible } = useMotionSettings();
-  const playing = ready && !reduced && !paused && visible && active;
+  const scrollActive = ready && !reduced && visible && active;
+  const playing = scrollActive && !paused;
   const { scrollYProgress: progress } = useScroll({
     target: timeline,
     // The end is measured against the document, not the changing visual viewport.
@@ -159,7 +160,7 @@ export default function CinematicJourney() {
           <div className="wing-half wing-left" />
           <div className="wing-half wing-right" />
         </div>
-        <WingDissolve progress={progress} active={playing} wings={wings} />
+        <WingDissolve progress={progress} active={scrollActive} wings={wings} />
         <div className="film-cloud-drift" aria-hidden="true" />
         <div className="film-feathers" aria-hidden="true">
           {Array.from({ length: 7 }, (_, i) => (

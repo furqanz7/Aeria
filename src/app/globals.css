@@ -190,7 +190,7 @@ h3 {
   border: 0;
 }
 .skip-link {
-  position: fixed;
+  position: absolute;
   top: 10px;
   left: 20px;
   transform: translateY(-150%);
@@ -200,6 +200,7 @@ h3 {
   padding: 12px 22px;
 }
 .skip-link:focus {
+  position: fixed;
   transform: translateY(0);
 }
 /* Navigation */

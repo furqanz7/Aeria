@@ -203,6 +203,22 @@ p {
   overflow: hidden;
   isolation: isolate;
 }
+/* Preserve the pinned composition as normal document content where scroll
+   timelines are supported. Keep the scene out of the fixed/sticky layer path
+   and let the browser synchronize the pin without JavaScript scroll writes. */
+@supports (animation-timeline: scroll(root block)) and (animation-range: 0px 1px) {
+  .film-stage {
+    position: relative;
+    top: auto;
+    animation: film-document-pin auto linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px calc(250svh - 100lvh);
+  }
+  @keyframes film-document-pin {
+    from { transform: translate3d(0, 0, 0); }
+    to { transform: translate3d(0, calc(250svh - 100lvh), 0); }
+  }
+}
 .film-world,
 .film-world img,
 .film-vignette,
@@ -1200,7 +1216,7 @@ html[data-page-hidden="true"] *,
     margin: 22px 0 0;
   }
   .film-bottom {
-    bottom: calc(32px + var(--safe-bottom));
+    bottom: calc(32px + var(--safe-bottom) + max(0px, 100lvh - 100svh));
     left: max(32px, var(--safe-left));
     right: max(32px, var(--safe-right));
   }
@@ -1318,7 +1334,7 @@ html[data-page-hidden="true"] *,
   .film-bottom {
     left: max(22px, var(--safe-left));
     right: max(22px, var(--safe-right));
-    bottom: calc(28px + var(--safe-bottom));
+    bottom: calc(28px + var(--safe-bottom) + max(0px, 100lvh - 100svh));
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -1892,3 +1908,9 @@ html[data-motion-paused="true"] *::before,
 html[data-motion-paused="true"] *::after,
 html[data-page-hidden="true"] *::before,
 html[data-page-hidden="true"] *::after { animation-play-state: paused !important; }
+
+/* Atmosphere pause must not detach the scene from document scrolling. */
+html[data-motion-paused="true"] .film-stage,
+html[data-page-hidden="true"] .film-stage {
+  animation-play-state: running !important;
+}
