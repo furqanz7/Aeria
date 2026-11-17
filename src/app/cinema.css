@@ -20,6 +20,13 @@ html {
 body {
   background: var(--background);
 }
+.aeria-garden {
+  background: var(--background);
+}
+html:has(.site-header.menu-open),
+body:has(.site-header.menu-open) {
+  background: #0c2b3c;
+}
 h1,
 h2,
 h3 {
@@ -1097,6 +1104,9 @@ html[data-page-hidden="true"] *,
   }
 }
 @media (max-width: 859px) {
+  body {
+    background: #426f78;
+  }
   .site-header {
     --mobile-bar-height: 88px;
     padding-top: var(--safe-top);
@@ -1110,6 +1120,7 @@ html[data-page-hidden="true"] *,
     width: calc(100% - 48px - var(--safe-left) - var(--safe-right));
   }
   .menu-backdrop {
+    display: none;
     top: calc(var(--mobile-bar-height) + var(--safe-top));
     background: #031a2ec4;
     backdrop-filter: blur(10px);
@@ -1147,12 +1158,17 @@ html[data-page-hidden="true"] *,
     margin: 22px 0 0;
   }
   .film-bottom {
-    bottom: calc(32px + var(--safe-bottom));
+    bottom: calc(32px + var(--safe-bottom) + max(0px, 100lvh - 100dvh));
     left: max(32px, var(--safe-left));
     right: max(32px, var(--safe-right));
   }
   .film-stage {
-    min-height: min(650px, 100svh);
+    position: relative;
+    top: auto;
+    height: 100vh;
+    height: 100lvh;
+    min-height: 0;
+    will-change: transform;
   }
   .film-intro h1 {
     font-size: 24vw;
@@ -1233,9 +1249,9 @@ html[data-page-hidden="true"] *,
     height: 220svh;
   }
   .film-stage {
-    height: 100svh;
-    height: 100dvh;
-    min-height: min(600px, 100svh);
+    height: 100vh;
+    height: 100lvh;
+    min-height: 0;
   }
   .film-sky img {
     object-position: 57% center;
@@ -1276,7 +1292,7 @@ html[data-page-hidden="true"] *,
   .film-bottom {
     left: max(22px, var(--safe-left));
     right: max(22px, var(--safe-right));
-    bottom: calc(28px + var(--safe-bottom));
+    bottom: calc(28px + var(--safe-bottom) + max(0px, 100lvh - 100dvh));
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -1545,6 +1561,7 @@ html[data-page-hidden="true"] *,
   }
   .film-intro,
   .film-world,
+  .film-stage,
   .film-wings {
     will-change: auto;
   }

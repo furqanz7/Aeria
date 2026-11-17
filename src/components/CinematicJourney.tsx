@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   motion,
   useInView,
@@ -78,13 +78,49 @@ export function LightField({ active = true }: { active?: boolean }) {
 
 export default function CinematicJourney() {
   const ref = useRef<HTMLElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const [mobilePin, setMobilePin] = useState({ enabled: false, start: 0, distance: 0 });
   const active = useInView(ref, { margin: "100px" });
   const { ready, reduced, paused, visible } = useMotionSettings();
   const playing = ready && !reduced && !paused && visible && active;
-  const { scrollYProgress: progress } = useScroll({
+  const { scrollY, scrollYProgress: progress } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
+  useEffect(() => {
+    const hero = ref.current;
+    const stage = stageRef.current;
+    if (!hero || !stage) return;
+    const mobile = window.matchMedia("(max-width: 859px)");
+    let frame = 0;
+    const measure = () => {
+      const next = {
+        enabled: mobile.matches,
+        start: hero.getBoundingClientRect().top + window.scrollY,
+        distance: Math.max(0, hero.offsetHeight - stage.offsetHeight),
+      };
+      setMobilePin(previous => previous.enabled === next.enabled &&
+        previous.start === next.start && previous.distance === next.distance ? previous : next);
+    };
+    const resize = new ResizeObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(measure);
+    });
+    resize.observe(hero);
+    resize.observe(stage);
+    mobile.addEventListener("change", measure);
+    measure();
+    return () => {
+      resize.disconnect();
+      mobile.removeEventListener("change", measure);
+      cancelAnimationFrame(frame);
+    };
+  }, []);
+  // Safari clips viewport-attached layers at its floating browser controls.
+  // Keep the mobile scene in document flow and reproduce its pin with scroll motion.
+  const stageY = useTransform(scrollY,
+    [mobilePin.start, mobilePin.start + Math.max(1, mobilePin.distance)],
+    [0, mobilePin.distance]);
   const skyOpacity = useTransform(progress, [0, 0.28, 0.66], [1, 1, 0]);
   const depthOpacity = useTransform(progress, [0.25, 0.65], [0, 1]);
   const titleOpacity = useTransform(progress, [0, 0.2, 0.43], [1, 1, 0]);
@@ -103,7 +139,8 @@ export default function CinematicJourney() {
       className={`cinematic-journey ${paused ? "film-paused" : ""} ${active ? "film-active" : ""}`}
       aria-label="Aeria — a new dimension of payments"
     >
-      <div className="film-stage">
+      <motion.div ref={stageRef} className="film-stage"
+        style={{ y: mobilePin.enabled && !reduced ? stageY : 0 }}>
         <motion.div
           className="film-world film-sky"
           style={
@@ -207,7 +244,7 @@ export default function CinematicJourney() {
             <span aria-hidden="true">{paused ? "▷" : "Ⅱ"}</span>
           </button>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
