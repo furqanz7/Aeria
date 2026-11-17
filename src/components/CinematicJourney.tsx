@@ -111,13 +111,14 @@ export default function CinematicJourney() {
           }
         >
           <Image
-            src="/visuals/aeria-film-ascent.webp"
+            src="/visuals/aeria-film-ascent-iridescent.webp"
             alt=""
             fill
             priority
+            unoptimized
             sizes="100vw"
-            quality={90}
           />
+          <div className="film-rays film-rays--sky" aria-hidden="true" />
         </motion.div>
         <motion.div
           className="film-world film-depth"
@@ -128,13 +129,13 @@ export default function CinematicJourney() {
           }
         >
           <Image
-            src="/visuals/aeria-film-depth.webp"
+            src="/visuals/aeria-film-depth-iridescent.webp"
             alt=""
             fill
+            unoptimized
             sizes="100vw"
-            quality={90}
           />
-          <div className="film-rays" />
+          <div className="film-rays film-rays--sea" aria-hidden="true" />
         </motion.div>
         <div className="film-vignette" />
         <LightField active={playing} />

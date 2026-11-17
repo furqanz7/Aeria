@@ -319,23 +319,31 @@ p {
   mix-blend-mode: soft-light;
 }
 .film-rays {
-  background: conic-gradient(
-    from 155deg at 54% 0%,
-    transparent 0deg,
-    #c7ecff12 12deg,
-    transparent 20deg,
-    #c7ecff0e 35deg,
-    transparent 40deg
-  );
-  transform-origin: 54% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform-origin: var(--ray-origin);
   animation: light-sweep 18s ease-in-out infinite alternate;
   animation-play-state: paused;
   mix-blend-mode: screen;
 }
+.film-rays--sky {
+  --ray-origin: 89% 17%;
+  background-image: url("/visuals/aeria-sky-spectral-ray.svg");
+  background-position: 50% 58%;
+}
+.film-rays--sea {
+  --ray-origin: 54% 0%;
+  background-image: url("/visuals/aeria-sea-spectral-rays.svg");
+  background-position: center;
+}
 @keyframes light-sweep {
+  from {
+    transform: rotate(-.6deg);
+    opacity: .65;
+  }
   to {
-    transform: rotate(9deg) scale(1.15);
-    opacity: 0.45;
+    transform: rotate(.6deg);
+    opacity: .95;
   }
 }
 .film-feathers {
@@ -955,7 +963,7 @@ p {
   z-index: -1;
   background:
     linear-gradient(#123d4840, #123d4820),
-    url("/visuals/aeria-film-ascent.webp") center 70% / cover;
+    url("/visuals/aeria-film-ascent-iridescent.webp") center 70% / cover;
 }
 .closing-content {
   position: relative;
@@ -1200,6 +1208,10 @@ html[data-page-hidden="true"] *,
   }
   .film-sky img {
     object-position: 57% center;
+  }
+  .film-rays--sky {
+    --ray-origin: 156% 17%;
+    background-position: 57% center;
   }
   .film-intro {
     top: 29%;
@@ -1566,7 +1578,7 @@ html[data-page-hidden="true"] *,
   inset: 0;
   background:
     linear-gradient(#061b2d35, #061b2d99),
-    url("/visuals/aeria-film-depth.webp") center/cover;
+    url("/visuals/aeria-film-depth-iridescent.webp") center/cover;
   opacity: 0.65;
   z-index: -1;
   pointer-events: none;
