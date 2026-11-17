@@ -10,6 +10,12 @@ export default function Nav() {
   const nav = useRef<HTMLElement>(null);
   useEffect(() => {
     if (!open) return;
+    const root = document.documentElement;
+    const body = document.body;
+    const previousRootOverflow = root.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+    root.style.overflow = "hidden";
+    body.style.overflow = "hidden";
     const first = nav.current?.querySelector<HTMLAnchorElement>("a");
     first?.focus();
     function onKey(e: KeyboardEvent) {
@@ -42,12 +48,14 @@ export default function Nav() {
     };
     mq.addEventListener("change", onResize);
     return () => {
+      root.style.overflow = previousRootOverflow;
+      body.style.overflow = previousBodyOverflow;
       document.removeEventListener("keydown", onKey);
       mq.removeEventListener("change", onResize);
     };
   }, [open]);
   return (
-    <header className="site-header">
+    <header className={`site-header${open ? " menu-open" : ""}`}>
       <div className="nav-shell">
         <a
           className="brand"

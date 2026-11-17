@@ -9,6 +9,13 @@
   --line: #b9c9c3;
   --gold: #f3dfab;
   --night: #051728;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+html {
+  background: #426f78;
 }
 body {
   background: var(--background);
@@ -150,6 +157,7 @@ p {
 }
 .film-stage {
   height: 100svh;
+  height: 100dvh;
   min-height: min(650px, 100svh);
   position: sticky;
   top: 0;
@@ -1089,22 +1097,40 @@ html[data-page-hidden="true"] *,
   }
 }
 @media (max-width: 859px) {
+  .site-header {
+    --mobile-bar-height: 88px;
+    padding-top: var(--safe-top);
+  }
+  .site-header.menu-open {
+    position: fixed;
+    background: #0c2b3c;
+  }
   .nav-shell {
-    height: 88px;
-    width: calc(100% - 48px);
+    height: var(--mobile-bar-height);
+    width: calc(100% - 48px - var(--safe-left) - var(--safe-right));
   }
   .menu-backdrop {
-    top: 88px;
+    top: calc(var(--mobile-bar-height) + var(--safe-top));
     background: #031a2ec4;
     backdrop-filter: blur(10px);
   }
   .mobile-nav {
-    top: 88px;
+    position: fixed;
+    top: calc(var(--mobile-bar-height) + var(--safe-top));
+    height: calc(100vh - var(--mobile-bar-height) - var(--safe-top));
+    height: calc(100dvh - var(--mobile-bar-height) - var(--safe-top));
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
     background: #0c2b3c;
     color: #ebddb5;
-    padding: 30px 24px;
+    padding: 18px max(24px, var(--safe-right)) max(24px, var(--safe-bottom)) max(24px, var(--safe-left));
   }
   .mobile-nav > a {
+    flex: 1 0 auto;
+    min-height: 64px;
+    padding-block: 16px;
     color: #f0dfb1;
     border-color: #bed2cd30;
     font-family: var(--font-display), serif;
@@ -1116,6 +1142,14 @@ html[data-page-hidden="true"] *,
   }
   .mobile-nav > p {
     color: #b7cac5;
+    flex-shrink: 0;
+    padding-top: 0;
+    margin: 22px 0 0;
+  }
+  .film-bottom {
+    bottom: calc(32px + var(--safe-bottom));
+    left: max(32px, var(--safe-left));
+    right: max(32px, var(--safe-right));
   }
   .film-stage {
     min-height: min(650px, 100svh);
@@ -1174,9 +1208,11 @@ html[data-page-hidden="true"] *,
     width: calc(100% - 44px);
   }
   .nav-shell {
-    width: calc(100% - 40px);
+    width: calc(100% - 40px - var(--safe-left) - var(--safe-right));
     gap: 16px;
-    height: 82px;
+  }
+  .site-header {
+    --mobile-bar-height: 82px;
   }
   .brand > span {
     font-size: 32px;
@@ -1193,17 +1229,12 @@ html[data-page-hidden="true"] *,
   .menu-toggle {
     width: 25px;
   }
-  .mobile-nav {
-    top: 82px;
-  }
-  .menu-backdrop {
-    top: 82px;
-  }
   .cinematic-journey {
     height: 220svh;
   }
   .film-stage {
     height: 100svh;
+    height: 100dvh;
     min-height: min(600px, 100svh);
   }
   .film-sky img {
@@ -1243,9 +1274,9 @@ html[data-page-hidden="true"] *,
     max-width: 135px;
   }
   .film-bottom {
-    left: 22px;
-    right: 22px;
-    bottom: 28px;
+    left: max(22px, var(--safe-left));
+    right: max(22px, var(--safe-right));
+    bottom: calc(28px + var(--safe-bottom));
     gap: 16px;
     flex-wrap: wrap;
   }
