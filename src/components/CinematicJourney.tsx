@@ -122,10 +122,6 @@ export default function CinematicJourney() {
       } as MotionStyle}
     >
       <div ref={timeline} className="film-scroll-track" aria-hidden="true" />
-      <div className="film-bleed" aria-hidden="true">
-        <div className="film-bleed-sky" />
-        <div className="film-bleed-depth" />
-      </div>
       <div className="film-stage">
         <div className="film-world film-sky">
           <Image
