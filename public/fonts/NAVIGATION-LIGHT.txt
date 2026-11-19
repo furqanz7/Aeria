@@ -1,0 +1,10 @@
+Aeria Navigation Light is a modified derivative of Belleza Regular.
+Original copyright: Copyright 2012 The Belleza Project Authors
+(https://github.com/etunni/belleza).
+
+The derivative is distributed under the SIL Open Font License 1.1, included
+in BELLEZA-OFL.txt. It is renamed to distinguish it from the original font.
+The original font and license are retained in this directory.
+
+Modification: lighter outlines, preserved advances and kerning, weight 300,
+and updated font names. Rebuild with scripts/make-navigation-light.py.

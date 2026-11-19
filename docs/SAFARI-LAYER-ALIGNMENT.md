@@ -50,6 +50,12 @@ The accepted layout now uses locally hosted Belleza for the five navigation labe
 
 The production build passes. Native Safari checks at 402px and 320px show the new lettering fitting without menu overflow. Frame samples from scroll 40 confirm intermediate opacity values in both directions, stable horizontal controls, and restored scroll position/overflow after closing. Rapid close/reopen/close also passes. Evidence is in ignored `work/native-safari/menu-champagne-*`.
 
+## Light menu lettering — 19 November 2026
+
+The menu now uses Aeria Navigation Light, a renamed OFL derivative of the bundled Belleza font. The generator in `scripts/make-navigation-light.py` reduces outline weight while preserving character coverage, advances and kerning. The font declares weight 300 and includes a modification notice beside the original license. Size, colour, spacing and transition values are unchanged by this revision.
+
+The production build passes. Native Safari loads the actual 300-weight font at 402px and 320px, with all five labels fitting and the same champagne RGB values. Link bounding boxes at 402px match the preceding release exactly. Evidence is in ignored `work/native-safari/menu-light-*`.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.

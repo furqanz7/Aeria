@@ -25,9 +25,9 @@ const italiana = localFont({
   display: "swap",
 });
 const navigation = localFont({
-  src: "../../public/fonts/belleza-regular.ttf",
+  src: "../../public/fonts/aeria-navigation-light.woff2",
   variable: "--font-navigation",
-  weight: "400",
+  weight: "300",
   display: "swap",
 });
 const title = "Aeria — One identity. Every currency. Everywhere.";
