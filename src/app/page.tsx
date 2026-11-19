@@ -488,33 +488,29 @@ export default function Home() {
       </section>
       <footer className="site-footer">
         <div className="shell">
-          <div className="footer-layout">
-            <div className="footer-identity">
-              <a className="footer-brand" href="#hero" aria-label="Aeria home">
-                <OriginalLogo size={32} />
-                <AeriaWordmark />
-              </a>
-              <p className="footer-tagline">A new dimension of connection.</p>
-            </div>
-            <nav className="footer-navigation" aria-label="Footer">
-              <a href="#identity">Aeria ID <Arrow /></a>
-              <a href="#p2p">The experience <Arrow /></a>
-              <a href="#terminal">Merchants <Arrow /></a>
-              <a href="#privacy">Trust & security <Arrow /></a>
+          <div className="footer-main">
+            <a className="brand" href="#hero">
+              <OriginalLogo className="wordmark-logo" size={32} />
+              <AeriaWordmark />
+            </a>
+            <span>A new dimension of connection.</span>
+            <nav aria-label="Footer">
+              <a href="#identity">Aeria ID</a>
+              <a href="#p2p">The experience</a>
+              <a href="#terminal">Merchants</a>
+              <a href="#privacy">Trust & security</a>
             </nav>
-            <a className="footer-return" href="#hero" aria-label="Back to top">
-              <Arrow />
+            <a className="back-top" href="#hero" aria-label="Back to top">
+              ↑
             </a>
           </div>
-          <div className="footer-meta">
-            <div className="footer-colophon">
-              <p>© {new Date().getFullYear()} Aeria.</p>
-              <span>Fly with Aeria.</span>
-            </div>
-            <p className="footer-availability">
+          <div className="footer-bottom">
+            <p>© {new Date().getFullYear()} Aeria.</p>
+            <p>
               A global vision. Availability depends on approved partners, routes
               and local regulations.
             </p>
+            <span>Fly with Aeria.</span>
           </div>
         </div>
       </footer>
