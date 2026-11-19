@@ -201,15 +201,6 @@ p {
     from { transform: translate3d(0, 0, 0); }
     to { transform: translate3d(0, calc(250svh - 100lvh), 0); }
   }
-  .site-header:not(.menu-open) {
-    animation: film-header-exit auto linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0px 32px;
-  }
-  @keyframes film-header-exit {
-    from { opacity: 1; visibility: visible; }
-    to { opacity: 0; visibility: hidden; }
-  }
 }
 .film-world,
 .film-world img,
@@ -1921,8 +1912,6 @@ html[data-page-hidden="true"] *::after { animation-play-state: paused !important
 
 /* Atmosphere pause must not detach the scene from document scrolling. */
 html[data-motion-paused="true"] .film-stage,
-html[data-page-hidden="true"] .film-stage,
-html[data-motion-paused="true"] .site-header,
-html[data-page-hidden="true"] .site-header {
+html[data-page-hidden="true"] .film-stage {
   animation-play-state: running !important;
 }

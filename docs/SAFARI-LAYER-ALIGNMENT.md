@@ -2,6 +2,10 @@
 
 This revision follows the seams and header overlap shown in IMG_3813.PNG and IMG_3814.PNG. It preserves the shared cinematic sequence on desktop, tablet and phone.
 
+## Header follow-up — 19 November 2026
+
+At the user's request, the header scroll fade described in the original investigation below has been removed. The header retains its absolute document positioning and moves upward naturally with scrolling at full opacity. The artwork edge and scene-exit corrections remain in place. The historical fade measurements below describe the preceding release.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.
