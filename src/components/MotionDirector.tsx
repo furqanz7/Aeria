@@ -6,6 +6,26 @@ import { useMotionSettings } from "@/lib/motion";
 export default function MotionDirector() {
   const motion = useMotionSettings();
   useEffect(() => {
+    const root = document.documentElement;
+    const footer = document.querySelector<HTMLElement>(".site-footer");
+    if (!footer) return;
+    const theme = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    const originalTheme = theme?.content;
+    const footerColor = getComputedStyle(root).getPropertyValue("--footer-edge").trim();
+    const observer = new IntersectionObserver(([entry]) => {
+      root.dataset.footerEdge = String(entry.isIntersecting);
+      if (theme && originalTheme) {
+        theme.content = entry.isIntersecting ? footerColor : originalTheme;
+      }
+    });
+    observer.observe(footer);
+    return () => {
+      observer.disconnect();
+      delete root.dataset.footerEdge;
+      if (theme && originalTheme) theme.content = originalTheme;
+    };
+  }, []);
+  useEffect(() => {
     const chapters = document.querySelectorAll<HTMLElement>(".section, .final-cta");
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) (entry.target as HTMLElement).dataset.motionActive = String(entry.isIntersecting);

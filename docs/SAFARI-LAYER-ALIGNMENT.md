@@ -6,6 +6,12 @@ This revision follows the seams and header overlap shown in IMG_3813.PNG and IMG
 
 At the user's request, the header scroll fade described in the original investigation below has been removed. The header retains its absolute document positioning and moves upward naturally with scrolling at full opacity. The artwork edge and scene-exit corrections remain in place. The historical fade measurements below describe the preceding release.
 
+## Footer browser background — 19 November 2026
+
+The sky-blue band below the dark footer was the document canvas behind Safari's bottom controls. The footer layout itself was not the source. An observer now applies the footer's existing #071a2c colour to the root/body background while the footer intersects the viewport, and restores the original colours when it leaves. The theme-colour metadata follows the same state for browsers that use it. Cleanup restores the original metadata and removes the state attribute.
+
+Native iPhone Safari verification of the source build gives root/body rgb(7, 26, 44) and theme #071a2c at the footer; the screenshot shows a continuous dark background behind the bottom controls. Footer geometry remains 402×227.78125px. The same-page footer-to-top check restores the sky canvas and theme, with the sky fully visible and the sea hidden. Evidence is in ignored `work/native-safari/footer-edge-source.png` and `footer-edge-return-sky.png`. The footer markup and layout are unchanged by this correction.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.

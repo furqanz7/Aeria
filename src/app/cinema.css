@@ -10,6 +10,7 @@
   --gold: #f3dfab;
   --night: #051728;
   --film-edge: #4a727e;
+  --footer-edge: #071a2c;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
@@ -20,6 +21,11 @@ html {
 }
 body {
   background: var(--background);
+}
+/* Match browser chrome and overscroll to the footer at the document's end. */
+html[data-footer-edge="true"],
+html[data-footer-edge="true"] body {
+  background: var(--footer-edge);
 }
 .aeria-garden {
   background: var(--background);
@@ -1077,7 +1083,7 @@ p {
   color: #fff0cc;
 }
 .site-footer {
-  background: #071a2c;
+  background: var(--footer-edge);
   color: #eadbb2;
   padding: 60px 0 28px;
 }
