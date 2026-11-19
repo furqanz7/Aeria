@@ -1,27 +1,32 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { NAV_LINKS, TESTFLIGHT_URL } from "@/lib/site";
 import { Arrow } from "./Icons";
 import OriginalLogo from "./OriginalLogo";
 import AeriaWordmark from "./AeriaWordmark";
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const nav = useRef<HTMLElement>(null);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!open) return;
     const root = document.documentElement;
     const body = document.body;
     const previousRootOverflow = root.style.overflow;
     const previousBodyOverflow = body.style.overflow;
+    const element = header.current;
+    // Keep the open menu aligned with the frozen page without a fixed layer
+    // whose colour Safari can retain after the menu has closed.
+    element?.style.setProperty("--menu-scroll-y", `${window.scrollY}px`);
     root.style.overflow = "hidden";
     body.style.overflow = "hidden";
     const first = nav.current?.querySelector<HTMLAnchorElement>("a");
-    first?.focus();
+    first?.focus({ preventScroll: true });
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") {
         setOpen(false);
-        toggle.current?.focus();
+        toggle.current?.focus({ preventScroll: true });
       }
       if (e.key === "Tab") {
         const items = [
@@ -50,12 +55,13 @@ export default function Nav() {
     return () => {
       root.style.overflow = previousRootOverflow;
       body.style.overflow = previousBodyOverflow;
+      element?.style.removeProperty("--menu-scroll-y");
       document.removeEventListener("keydown", onKey);
       mq.removeEventListener("change", onResize);
     };
   }, [open]);
   return (
-    <header className={`site-header${open ? " menu-open" : ""}`}>
+    <header ref={header} className={`site-header${open ? " menu-open" : ""}`}>
       <div className="nav-shell">
         <a
           className="brand"
@@ -102,7 +108,7 @@ export default function Nav() {
             tabIndex={-1}
             onClick={() => {
               setOpen(false);
-              toggle.current?.focus();
+              toggle.current?.focus({ preventScroll: true });
             }}
           />
           <nav

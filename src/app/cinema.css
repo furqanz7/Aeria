@@ -1178,7 +1178,11 @@ html[data-page-hidden="true"] *,
     padding-top: var(--safe-top);
   }
   .site-header.menu-open {
-    position: fixed;
+    position: absolute;
+    top: var(--menu-scroll-y, 0px);
+    /* Paint behind the browser controls while the menu content fits 100dvh. */
+    min-height: calc(100vh + 72px);
+    min-height: calc(100lvh + 72px);
     background: #0c2b3c;
   }
   .nav-shell {
@@ -1192,7 +1196,7 @@ html[data-page-hidden="true"] *,
     backdrop-filter: blur(10px);
   }
   .mobile-nav {
-    position: fixed;
+    position: absolute;
     top: calc(var(--mobile-bar-height) + var(--safe-top));
     height: calc(100vh - var(--mobile-bar-height) - var(--safe-top));
     height: calc(100dvh - var(--mobile-bar-height) - var(--safe-top));

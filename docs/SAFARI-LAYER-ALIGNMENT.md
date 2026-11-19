@@ -12,6 +12,18 @@ The sky-blue band below the dark footer was the document canvas behind Safari's 
 
 Native iPhone Safari verification of the source build gives root/body rgb(7, 26, 44) and theme #071a2c at the footer; the screenshot shows a continuous dark background behind the bottom controls. Footer geometry remains 402×227.78125px. The same-page footer-to-top check restores the sky canvas and theme, with the sky fully visible and the sea hidden. Evidence is in ignored `work/native-safari/footer-edge-source.png` and `footer-edge-return-sky.png`. The footer markup and layout are unchanged by this correction.
 
+## Menu return — 19 November 2026
+
+The native simulator reproduced the dark status-area strip after opening and closing the mobile menu. The menu DOM was gone, scroll locking was released, and computed root/body backgrounds were already sky-coloured, yet Safari retained the former menu colour above the page.
+
+The open header and menu now use absolute document positioning while page scrolling is locked. A header-local offset captures the current scroll position before paint, so the open menu stays aligned with the viewport even when opened from a partially scrolled header. Closing removes that offset and restores the original overflow values. Focus restoration avoids scrolling the page. This removes the viewport-constrained menu layers responsible for the retained colour; the closed header continues to scroll naturally at full opacity.
+
+The production build passes. At 402px width, three consecutive open/close cycles return to the uninterrupted sky. Opening at scroll 40 positions the menu header at viewport top 0 and the menu bottom at 714; Escape returns to scroll 40, header top -40, opacity 1, focus on the menu button, and unlocked root/body scrolling. Selecting Aeria ID closes the menu, releases scrolling, and reaches #identity. Native screenshots and measurements are in ignored `work/native-safari/menu-source-*` and `menu-close-source.png`.
+
+The open header background extends through the large viewport plus the existing 72px artwork allowance, while the menu content keeps its dynamic-viewport height. Final native captures at 320px layout width show continuous dark coverage behind both browser control areas; at 402px, three more close cycles restore the sky without a retained strip. The final build also preserves the partially scrolled Escape result. Evidence is in ignored `work/native-safari/menu-final-*`.
+
+WebKit's explanation of viewport-constrained colour extension is at https://bugs.webkit.org/show_bug.cgi?id=301756#c2. The results above are observations of this site's native reproduction and corrected build.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.
