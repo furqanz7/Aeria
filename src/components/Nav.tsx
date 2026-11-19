@@ -97,7 +97,7 @@ export default function Nav() {
   useEffect(() => {
     if (phase !== "closing") return;
     // Also finish when reduced motion or an interrupted transition emits no event.
-    const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
+    const delay = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 440;
     const timer = window.setTimeout(() => setPhase("closed"), delay);
     return () => window.clearTimeout(timer);
   }, [phase]);

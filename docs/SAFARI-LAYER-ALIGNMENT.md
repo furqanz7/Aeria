@@ -44,6 +44,12 @@ The menu lifecycle explicitly separates entering, open, closing and closed state
 
 The production build passes. Native Safari frame samples at scroll 0 and 40 show intermediate opacity values in both directions, stable horizontal control positions, and scrolling remaining locked until the menu closes. At scroll 40, shell top moves continuously from -40 to 0 and back to -40. Tests also pass for 320px menu fit, keyboard wrapping and Escape, rapid close/reopen/close, and deferred #identity navigation. Screenshots and measurements are in ignored `work/native-safari/menu-refined-*` and `menu-motion-*`; `menu-refined-transition.mp4` is a native simulator recording.
 
+## Menu lettering and easing refinement — 19 November 2026
+
+The accepted layout now uses locally hosted Belleza for the five navigation labels, with champagne-gold text and more open letter spacing. Its SIL Open Font License is included alongside the font; the source is Google's `fonts/ofl/belleza` directory. Other site text keeps its existing typefaces. The glass and header-shell transitions increase from 280ms to 340ms with gentler initial easing; the link reveal and exit timings follow that pace, and the missing-event timeout increases to 440ms.
+
+The production build passes. Native Safari checks at 402px and 320px show the new lettering fitting without menu overflow. Frame samples from scroll 40 confirm intermediate opacity values in both directions, stable horizontal controls, and restored scroll position/overflow after closing. Rapid close/reopen/close also passes. Evidence is in ignored `work/native-safari/menu-champagne-*`.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.

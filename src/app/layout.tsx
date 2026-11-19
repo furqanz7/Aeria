@@ -24,6 +24,12 @@ const italiana = localFont({
   weight: "400",
   display: "swap",
 });
+const navigation = localFont({
+  src: "../../public/fonts/belleza-regular.ttf",
+  variable: "--font-navigation",
+  weight: "400",
+  display: "swap",
+});
 const title = "Aeria — One identity. Every currency. Everywhere.";
 const description =
   "A new dimension of payments. Discover Aeria: a universal payment identity and proximity-first vision connecting people, currencies and eligible payment networks.";
@@ -73,7 +79,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${italiana.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${italiana.variable} ${navigation.variable}`}>
       <body>
         <a href="#main-content" className="skip-link">
           Skip to content
