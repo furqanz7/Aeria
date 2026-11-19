@@ -28,12 +28,14 @@
   .proximity-story-steps h3 { font-size: 28px; }
 }
 @media(max-width:767px) {
-  .proximity-section { padding: 78px 0 72px; }
+  .proximity-section { padding: 78px 0 72px; overflow-x: clip; }
   .proximity-heading { display: block; }
   .proximity-heading h2 { font-size: clamp(70px,15vw,90px); line-height: .94; margin-top: 22px; }
   .proximity-heading > p { max-width: 340px; font-size: 12px; line-height: 1.9; margin: 27px 0 0; }
   .proximity-cinematic { display: flex; flex-direction: column; gap: 30px; margin-top: 20px; }
   .proximity-presentation { order: 0; width: 100%; }
+  /* Let the phone bodies continue to the screen edge without rescaling the scene. */
+  .proximity-presentation > .product-scene-people { overflow: visible; }
   .proximity-narrative { order: 1; display: flex; flex-direction: column; width: 100%; padding: 0; }
   .proximity-explore-label { margin-top: 0; font-size: 7px; }
   .proximity-story-steps { margin: 20px 0 0; }
