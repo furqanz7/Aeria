@@ -60,6 +60,10 @@ The production build passes. Native Safari loads the actual 300-weight font at 4
 
 The navigation shell sits 18px higher through a relative offset, including its desktop and open-menu positions. The menu content geometry and animation timings retain their existing values. The production build passes; native Safari confirms the raised position and the transition from a partially scrolled header back to the same document offset, with scrolling released after close. Evidence is in ignored `work/native-safari/header-raised-*`.
 
+## Smoother menu closing — 20 November 2026
+
+Closing now coordinates the glass, navigation content, header shell, header beta action and menu icon over 340ms with a gentle ease-in-out curve. This avoids the earlier fast opacity drop and shorter link exit. Opening keeps its existing timing and easing. The production build passes; native Safari samples show matching glass/link opacity throughout closing, stable control positions, and unlocked scrolling after exit. Rapid close/reopen/close also passes. Evidence is in ignored `work/native-safari/menu-close-smooth-*`.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.

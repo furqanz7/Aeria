@@ -1263,6 +1263,15 @@ html[data-page-hidden="true"] *,
     transition-duration: 300ms;
     transition-delay: 35ms;
   }
+  [data-menu-phase="closing"] .menu-glass,
+  [data-menu-phase="closing"] .nav-shell,
+  [data-menu-phase="closing"] .mobile-nav,
+  [data-menu-phase="closing"] .nav-beta,
+  [data-menu-phase="closing"] .menu-toggle > span {
+    transition-duration: 340ms;
+    transition-timing-function: cubic-bezier(.4, 0, .6, 1);
+    transition-delay: 0ms;
+  }
   .mobile-nav-links {
     flex: 1 0 auto;
     display: flex;
