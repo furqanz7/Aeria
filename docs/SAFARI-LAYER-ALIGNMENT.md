@@ -24,6 +24,12 @@ The open header background extends through the large viewport plus the existing 
 
 WebKit's explanation of viewport-constrained colour extension is at https://bugs.webkit.org/show_bug.cgi?id=301756#c2. The results above are observations of this site's native reproduction and corrected build.
 
+## Menu visual refinement — 19 November 2026
+
+The mobile menu keeps its existing deep blue canvas and display typeface. Its row spacing is now bounded in relation to the viewport, with aligned number columns, smaller arrows, softer dividers, and a tagline aligned with the link labels. The inherited bottom border and shadow are removed so the background continues into Safari's controls. The open-menu beta button also stays on one line at narrow widths.
+
+The production build passes. Native Safari checks at 320px and 402px layout widths show all five links fitting without horizontal or vertical menu overflow; row heights are approximately 77px and 100px respectively. Native responsive inspection at 768px also preserves all links. Three open/close cycles retain the clean sky return and restored page scrolling. Final source screenshots and measurements are in ignored `work/native-safari/menu-polish-final-*`.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.

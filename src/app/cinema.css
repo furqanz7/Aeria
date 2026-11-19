@@ -1206,26 +1206,57 @@ html[data-page-hidden="true"] *,
     overscroll-behavior-y: contain;
     background: #0c2b3c;
     color: #ebddb5;
-    padding: 18px max(24px, var(--safe-right)) max(24px, var(--safe-bottom)) max(24px, var(--safe-left));
+    border-bottom: 0;
+    box-shadow: none;
+    padding: clamp(24px, 4dvh, 36px) max(24px, var(--safe-right)) max(28px, var(--safe-bottom)) max(24px, var(--safe-left));
   }
   .mobile-nav > a {
     flex: 1 0 auto;
-    min-height: 64px;
-    padding-block: 16px;
+    min-height: clamp(72px, 11dvh, 92px);
+    max-height: max(80px, 14dvh);
+    gap: 14px;
+    padding-block: 20px;
     color: #f0dfb1;
-    border-color: #bed2cd30;
+    border-color: #bed2cd24;
     font-family: var(--font-display), serif;
-    font-size: 28px;
+    font-size: clamp(28px, 6.8vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.035em;
+    transition: color 180ms ease;
   }
   .mobile-nav > a > small {
-    color: #a6bdbd;
+    width: 18px;
+    flex-shrink: 0;
+    color: #91aaad;
     font-family: var(--font-manrope), sans-serif;
+    font-size: 9px;
+    font-variant-numeric: tabular-nums;
+  }
+  .mobile-nav > a > .icon {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    color: #9cb5ba;
+    transition: transform 180ms ease, color 180ms ease;
+  }
+  .mobile-nav > a:focus-visible {
+    outline-offset: -3px;
+  }
+  .mobile-nav > a:active {
+    color: #fff0c8;
+  }
+  .mobile-nav > a:active > .icon {
+    color: #f0dfb1;
+    transform: translateX(3px);
   }
   .mobile-nav > p {
     color: #b7cac5;
     flex-shrink: 0;
-    padding-top: 0;
-    margin: 22px 0 0;
+    padding-top: 32px;
+    margin: auto 0 0 32px;
+    font-size: 10px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
   }
   .film-bottom {
     bottom: calc(32px + var(--safe-bottom) + max(0px, 100lvh - 100svh));
@@ -1303,6 +1334,13 @@ html[data-page-hidden="true"] *,
   .nav-beta {
     font-size: 9px;
     padding: 11px 12px;
+  }
+  .menu-open .nav-shell {
+    gap: 12px;
+  }
+  .menu-open .nav-beta {
+    white-space: nowrap;
+    padding-inline: 10px;
   }
   .menu-toggle {
     width: 25px;
