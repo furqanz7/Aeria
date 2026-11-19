@@ -117,18 +117,28 @@ export default function Nav() {
             className="mobile-nav"
             aria-label="Mobile"
           >
-            {NAV_LINKS.map((l, i) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
-                <small>0{i + 1}</small>
-                {l.label}
-                <Arrow />
+            <div className="mobile-nav-links">
+              {NAV_LINKS.map((l) => (
+                <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+                  {l.label}
+                </a>
+              ))}
+              <a href="#privacy" onClick={() => setOpen(false)}>
+                Trust & security
               </a>
-            ))}
-            <a href="#privacy" onClick={() => setOpen(false)}>
-              <small>05</small>Trust & security
-              <Arrow />
-            </a>
-            <p>A new dimension of payments.</p>
+            </div>
+            <div className="mobile-nav-footer">
+              <a
+                className="mobile-nav-beta"
+                href={TESTFLIGHT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get the beta
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+              <p>Fly with Aeria.</p>
+            </div>
           </nav>
         </>
       )}

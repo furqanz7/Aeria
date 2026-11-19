@@ -30,6 +30,12 @@ The mobile menu keeps its existing deep blue canvas and display typeface. Its ro
 
 The production build passes. Native Safari checks at 320px and 402px layout widths show all five links fitting without horizontal or vertical menu overflow; row heights are approximately 77px and 100px respectively. Native responsive inspection at 768px also preserves all links. Three open/close cycles retain the clean sky return and restored page scrolling. Final source screenshots and measurements are in ignored `work/native-safari/menu-polish-final-*`.
 
+## Glass menu — 19 November 2026
+
+The current menu replaces the preceding numbered list with a centered group of display-type links over a full-screen frosted layer. Backdrop blur and a translucent blue tint reveal the underlying cinematic scene; a top colour blend matches the document canvas. Browsers without backdrop-filter support receive a nearly opaque blue fallback. The open header keeps the original logo and wordmark, uses a 44px circular close control, and moves the beta action into a glass button below the links. The closed header and its natural scroll behaviour are unchanged.
+
+The production build passes. Native Safari checks at 320px and 402px show all five links and the beta action fitting without menu overflow. Three consecutive open/close cycles restore the sky and unlocked scrolling with no retained colour strip. Keyboard checks confirm initial link focus, reverse wrapping from Close to the beta action, forward wrapping back to Close, and Escape restoring focus to Open menu. Opening from scroll 40 and selecting Aeria ID closes the menu and reaches #identity with scrolling released. Evidence is in ignored `work/native-safari/menu-glass-final-*`.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.
