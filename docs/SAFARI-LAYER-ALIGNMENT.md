@@ -56,9 +56,9 @@ The menu now uses Aeria Navigation Light, a renamed OFL derivative of the bundle
 
 The production build passes. Native Safari loads the actual 300-weight font at 402px and 320px, with all five labels fitting and the same champagne RGB values. Link bounding boxes at 402px match the preceding release exactly. Evidence is in ignored `work/native-safari/menu-light-*`.
 
-## Header placement — 19 November 2026
+## Header placement — 20 November 2026
 
-The navigation shell sits 10px higher through a relative offset, including its desktop and open-menu positions. The menu content geometry and animation timings retain their existing values. The production build passes; native Safari confirms the raised position and the transition from a partially scrolled header back to the same document offset, with scrolling released after close. Evidence is in ignored `work/native-safari/header-raised-*`.
+The navigation shell sits 18px higher through a relative offset, including its desktop and open-menu positions. The menu content geometry and animation timings retain their existing values. The production build passes; native Safari confirms the raised position and the transition from a partially scrolled header back to the same document offset, with scrolling released after close. Evidence is in ignored `work/native-safari/header-raised-*`.
 
 ## Native findings
 
