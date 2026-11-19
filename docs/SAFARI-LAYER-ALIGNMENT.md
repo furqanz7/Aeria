@@ -36,6 +36,14 @@ The current menu replaces the preceding numbered list with a centered group of d
 
 The production build passes. Native Safari checks at 320px and 402px show all five links and the beta action fitting without menu overflow. Three consecutive open/close cycles restore the sky and unlocked scrolling with no retained colour strip. Keyboard checks confirm initial link focus, reverse wrapping from Close to the beta action, forward wrapping back to Close, and Escape restoring focus to Open menu. Opening from scroll 40 and selecting Aeria ID closes the menu and reaches #identity with scrolling released. Evidence is in ignored `work/native-safari/menu-glass-final-*`.
 
+## Menu type and transition correction — 19 November 2026
+
+The navigation now uses Manrope in a left-aligned column, retaining the original Aeria wordmark. The beta action is an underlined text link, and the close control has a consistent 44px hit area without the previous circular treatment. Header controls keep their layout throughout opening and closing.
+
+The menu lifecycle explicitly separates entering, open, closing and closed states. Its glass surface fades with CSS opacity; the links use a short opacity/translation transition. The menu stays mounted and document scrolling stays locked until the exit finishes. Internal navigation runs after that cleanup, so destination scrolling begins after the glass closes. Interrupted transitions can reverse, a timeout handles missing transition-end events, and reduced motion bypasses the fade. At a partially scrolled header, the shell moves between its original document position and the open-menu position without snapping.
+
+The production build passes. Native Safari frame samples at scroll 0 and 40 show intermediate opacity values in both directions, stable horizontal control positions, and scrolling remaining locked until the menu closes. At scroll 40, shell top moves continuously from -40 to 0 and back to -40. Tests also pass for 320px menu fit, keyboard wrapping and Escape, rapid close/reopen/close, and deferred #identity navigation. Screenshots and measurements are in ignored `work/native-safari/menu-refined-*` and `menu-motion-*`; `menu-refined-transition.mp4` is a native simulator recording.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.
