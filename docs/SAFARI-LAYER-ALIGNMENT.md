@@ -56,6 +56,10 @@ The menu now uses Aeria Navigation Light, a renamed OFL derivative of the bundle
 
 The production build passes. Native Safari loads the actual 300-weight font at 402px and 320px, with all five labels fitting and the same champagne RGB values. Link bounding boxes at 402px match the preceding release exactly. Evidence is in ignored `work/native-safari/menu-light-*`.
 
+## Header placement — 19 November 2026
+
+The navigation shell sits 10px higher through a relative offset, including its desktop and open-menu positions. The menu content geometry and animation timings retain their existing values. The production build passes; native Safari confirms the raised position and the transition from a partially scrolled header back to the same document offset, with scrolling released after close. Evidence is in ignored `work/native-safari/header-raised-*`.
+
 ## Native findings
 
 The ordinary iPhone 17 simulator in Xcode Device Hub, running iOS 27.0, reproduced the production edge bands. Safari Web Inspector reported a 402×874 screen, a 714px visual viewport, a 754px large-viewport scene, and zero exposed top safe-area inset at the scroll origin. The duplicate document backdrop covered the entire 250svh section while the main image covered the scene. Their different cover crops could therefore meet at a visible seam.

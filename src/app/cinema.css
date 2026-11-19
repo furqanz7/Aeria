@@ -116,6 +116,8 @@ p {
   color: var(--gold);
 }
 .nav-shell {
+  position: relative;
+  top: -10px;
   border-color: #f3dfab40;
   max-width: none;
   height: 105px;
