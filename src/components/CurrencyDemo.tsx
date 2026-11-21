@@ -43,6 +43,10 @@ export default function CurrencyDemo() {
     value > quote.fee &&
     value <= 100000;
   const received = valid ? (value - quote.fee) * quote.rate : null;
+  const formattedReceived = received === null ? "—" : received.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
   return (
     <div ref={ref} className="currency-demo" data-motion-active={playing}>
       <div className="quote-heading">
@@ -92,16 +96,12 @@ export default function CurrencyDemo() {
         <span>They receive</span>
         <motion.strong
           key={`${quote.to}-${received}`}
+          data-long-amount={formattedReceived.length >= 9}
           initial={playing ? { opacity: 0.25, y: 7 } : false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: playing ? 0.45 : 0 }}
         >
-          {received === null
-            ? "—"
-            : received.toLocaleString("en-US", {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2,
-              })}
+          <span>{formattedReceived}</span>
           <small>{quote.to}</small>
         </motion.strong>
         <span>{quote.destination}</span>

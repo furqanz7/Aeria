@@ -42,12 +42,15 @@ export default function Nav() {
     const body = document.body;
     const previousRootOverflow = root.style.overflow;
     const previousBodyOverflow = body.style.overflow;
+    const background = [...document.querySelectorAll<HTMLElement>("#main-content, .skip-link")]
+      .map((element) => ({ element, inert: element.inert }));
     const element = header.current;
     // Keep the open menu aligned with the frozen page without a fixed layer
     // whose colour Safari can retain after the menu has closed.
     element?.style.setProperty("--menu-scroll-y", `${window.scrollY}px`);
     root.style.overflow = "hidden";
     body.style.overflow = "hidden";
+    background.forEach(({ element }) => { element.inert = true; });
     const first = nav.current?.querySelector<HTMLAnchorElement>("a");
     first?.focus({ preventScroll: true });
     function onKey(e: KeyboardEvent) {
@@ -61,7 +64,7 @@ export default function Nav() {
           ...Array.from(
             nav.current?.querySelectorAll<HTMLAnchorElement>("a") ?? [],
           ),
-        ].filter(Boolean) as HTMLElement[];
+        ].filter((element): element is HTMLButtonElement | HTMLAnchorElement => Boolean(element && !element.closest("[inert]")));
         const firstItem = items[0],
           last = items[items.length - 1];
         if (e.shiftKey && document.activeElement === firstItem) {
@@ -82,6 +85,7 @@ export default function Nav() {
     return () => {
       root.style.overflow = previousRootOverflow;
       body.style.overflow = previousBodyOverflow;
+      background.forEach(({ element, inert }) => { element.inert = inert; });
       element?.style.removeProperty("--menu-scroll-y");
       document.removeEventListener("keydown", onKey);
       mq.removeEventListener("change", onResize);
@@ -106,6 +110,9 @@ export default function Nav() {
       ref={header}
       className={`site-header${present ? " menu-present" : ""}${phase === "open" ? " menu-open" : ""}`}
       data-menu-phase={phase}
+      role={present ? "dialog" : undefined}
+      aria-modal={present || undefined}
+      aria-label={present ? "Site navigation" : undefined}
     >
       {present && (
         <div

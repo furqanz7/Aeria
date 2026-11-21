@@ -18,6 +18,7 @@
 }
 html {
   background: var(--film-edge);
+  scrollbar-gutter: stable;
 }
 body {
   background: var(--background);
@@ -807,6 +808,8 @@ p {
   background: #f2f0e6;
 }
 .currency-demo {
+  min-width: 0;
+  container-type: inline-size;
   background: transparent;
   border: 1px solid #b5c4ba;
   border-radius: 0;
@@ -824,6 +827,12 @@ p {
   font-family: var(--font-display), serif;
   font-size: 52px;
   color: #235564;
+}
+.quote-receive > strong > span {
+  white-space: nowrap;
+}
+.quote-receive > strong[data-long-amount="true"] > span {
+  font-size: min(1em, 15cqi);
 }
 .quote-heading {
   color: #57777b;
@@ -1726,6 +1735,18 @@ html[data-page-hidden="true"] *,
   .film-deep-copy h2 { font-size: 11vh; margin: 15px 0; }
   .film-deep-copy > p:last-child { font-size: 18px; }
 }
+@media (max-width: 360px) {
+  .nav-shell {
+    gap: 10px;
+  }
+  .nav-shell > .nav-beta {
+    flex-shrink: 0;
+    gap: 6px;
+    padding-inline: 8px;
+    white-space: nowrap;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cinematic-journey {
     height: auto;
