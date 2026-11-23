@@ -400,6 +400,8 @@ p {
 .film-rays {
   background-repeat: no-repeat;
   background-size: cover;
+  background-image: var(--ray-art);
+  background-position: var(--ray-position);
   transform-origin: var(--ray-origin);
   animation: light-sweep 18s ease-in-out infinite alternate;
   animation-play-state: paused;
@@ -407,13 +409,31 @@ p {
 }
 .film-rays--sky {
   --ray-origin: 89% 17%;
-  background-image: url("/visuals/aeria-sky-spectral-ray.svg");
-  background-position: 50% 58%;
+  --ray-art: url("/visuals/aeria-sky-spectral-ray.svg");
+  --ray-position: 50% 58%;
+  --ray-spectrum: var(--film-sky-spectrum, 12%);
+  --ray-spectrum-angle: 54deg;
 }
 .film-rays--sea {
   --ray-origin: 54% 0%;
-  background-image: url("/visuals/aeria-sea-spectral-rays.svg");
-  background-position: center;
+  --ray-art: url("/visuals/aeria-sea-spectral-rays.svg");
+  --ray-position: center;
+  --ray-spectrum: var(--film-sea-spectrum, 15%);
+  --ray-spectrum-angle: 94deg;
+}
+@supports (mask-image: linear-gradient(black, transparent)) {
+  .film-rays::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* The moving colour follows the existing shafts at every image crop. */
+    mask: var(--ray-art) var(--ray-position) / cover no-repeat;
+    background-image: linear-gradient(var(--ray-spectrum-angle),
+      #f9dda59c 18%, #f6d5b6bf 37%, #a1f1ebc9 55%, #9dc8ffbf 66%, #c4a6f7b8 78%);
+    background-size: 185% 100%;
+    background-position: var(--ray-spectrum) 50%;
+    opacity: var(--film-spectrum-strength, 0.25);
+  }
 }
 @keyframes light-sweep {
   from {
@@ -430,6 +450,13 @@ p {
   inset: 0;
   pointer-events: none;
   z-index: 2;
+}
+.film-feathers--distant {
+  z-index: 0;
+  opacity: 0.76;
+}
+.film-feathers--distant .film-feather {
+  animation-duration: 19s;
 }
 .film-feather {
   position: absolute;
@@ -1430,7 +1457,7 @@ html[data-page-hidden="true"] *,
   }
   .film-rays--sky {
     --ray-origin: 156% 17%;
-    background-position: 57% center;
+    --ray-position: 57% center;
   }
   .film-intro {
     top: 29%;
